@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Services - M-Tech Group</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#ff9900'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+  :where([class^="ri-"])::before { content: "\f3c2"; }
+  body {
+  font-family: 'Poppins', sans-serif;
+  }
+  .hero-section {
+  background-image: url('https://readdy.ai/api/search-image?query=modern%2520digital%2520solutions%2520office%2520with%2520clean%2520workspace%252C%2520computer%2520screens%2520showing%2520web%2520design%2520and%2520digital%2520marketing%2520content.%2520The%2520left%2520side%2520has%2520a%2520clean%2520gradient%2520background%2520that%2520transitions%2520smoothly%2520to%2520the%2520right%2520side%2520image.%2520Professional%2520atmosphere%252C%2520soft%2520lighting%252C%2520modern%2520technology%2520devices%252C%2520minimalist%2520design&width=1920&height=800&seq=1&orientation=landscape');
+  background-size: cover;
+  background-position: center;
+  }
+  .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .testimonial-card {
+  transition: all 0.3s ease;
+  }
+  .testimonial-card:hover {
+  transform: scale(1.02);
+  }
+  input:focus, textarea:focus {
+  outline: none;
+  border-color: #e60000;
+  }
+  .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  }
+  .dropdown-container:hover .dropdown {
+  display: block;
+  }
+  .custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  }
+  .custom-checkbox:checked {
+  background-color: #e60000;
+  border-color: #e60000;
+  }
+  .custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  }
+  </style>
+</head>
+<body class="bg-white">
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-['Pacifico']">
+  <span class="text-red-500">M</span><span class="text-black">-Tech Group</span>
+</a>
+
+<nav class="hidden md:flex items-center space-x-8">
+<a href="index.html" class="text-gray-800 font-medium hover:text-primary transition-colors">Accueil</a>
+<div class="dropdown-container relative">
+<button class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center">
+Services
+<span class="ml-1 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</span>
+</button>
+<div class="dropdown bg-white shadow-lg rounded-md py-2 w-64">
+<a href="#sites-web" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Création de sites web</a>
+<a href="#design" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Design graphique</a>
+<a href="#assistance" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Assistance informatique</a>
+<a href="#documents" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Traitement de documents</a>
+<a href="#formation" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Formation</a>
+</div>
+</div>
+<a href="index.html#about" class="text-gray-800 font-medium hover:text-primary transition-colors">À propos</a>
+<a href="#contact-section" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+<a href="#contact-section" class="hidden md:inline-block bg-primary text-white px-5 py-2 text-white bg-red-500 hover:bg-red-600 rounded-full transition-colors">Demander un devis</a>
+</div>
+</header>
+
+  <main class="pt-20">
+    <section id="sites-web" class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 md:mb-16">
+          <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary/10 rounded-full">
+            <i class="ri-code-s-slash-line ri-2x text-red-500"></i>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Création de Sites Web</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">Des sites web sur mesure, performants et optimisés pour développer votre présence en ligne.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Carte Site Vitrine Simple -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Site Vitrine Simple</h3>
+        <p class="text-gray-600 mb-4 text-sm">Solution idéale pour une première présence en ligne professionnelle.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          50 000 - 80 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>1 à 3 pages</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Design responsive</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Formulaire de contact</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Optimisation SEO de base</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Hébergement 1 an offert</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+      
+      <!-- Carte Site Vitrine Avancé -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Site Vitrine Avancé</h3>
+        <p class="text-gray-600 mb-4 text-sm">Site complet avec fonctionnalités étendues pour une visibilité optimale.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          80 000 - 120 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>4+ pages</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Galerie photo/vidéo</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Blog intégré</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Animations personnalisées</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>SEO avancé</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+      
+      <!-- Carte E-commerce -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Site E-commerce</h3>
+        <p class="text-gray-600 mb-4 text-sm">Boutique en ligne clé en main pour vendre vos produits.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          150 000 - 200 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>10 produits maximum</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Panier d'achat</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Paiement mobile</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Responsive design</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Backoffice simple</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+      
+      <!-- Carte Maintenance -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Maintenance Site Web</h3>
+        <p class="text-gray-600 mb-4 text-sm">Gardez votre site à jour, performant et sécurisé.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          À partir de 90 000 <span class="text-sm font-normal text-gray-500">FCFA HT/mois</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Mises à jour régulières</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Sauvegardes quotidiennes</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Support technique réactif</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Analyse de sécurité</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Rapports mensuels détaillés</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+    </div> <!-- Closing services-grid for Création de Sites Web -->
+  </div> <!-- Closing container for Création de Sites Web -->
+</section> <!-- Closing section for Création de Sites Web -->
+
+<section id="design" class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 md:mb-16">
+      <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary/10 rounded-full">
+        <i class="ri-palette-line ri-2x text-red-500"></i>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Design Graphique</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Des identités visuelles percutantes et des supports de communication créatifs pour marquer les esprits.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Carte Logo Simple -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Logo Simple</h3>
+        <p class="text-gray-600 mb-4 text-sm">Identité visuelle de base pour votre entreprise.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          10 000 - 20 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Idée du client</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>2 propositions</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Fichiers vectoriels</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Format PNG/JPG</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Délai 5 jours</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+      
+      <!-- Carte Logo Premium -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Logo Premium</h3>
+        <p class="text-gray-600 mb-4 text-sm">Création complète d'identité visuelle.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          25 000 - 40 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Recherches créatives</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>3+ propositions</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Charte graphique simple</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Guide d'utilisation</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Tous formats</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+      
+      <!-- Carte Flyer Recto -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Flyer Recto</h3>
+        <p class="text-gray-600 mb-4 text-sm">Design professionnel de flyer une face.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          8 000 - 15 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Format A5 ou A4</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Design personnalisé</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Prêt à imprimer</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Fichiers haute résolution</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>2 retours inclus</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+
+      <!-- Carte Flyer Recto/Verso -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Flyer Recto/Verso</h3>
+        <p class="text-gray-600 mb-4 text-sm">Design professionnel de flyer double face.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          12 000 - 20 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Format A5 ou A4</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Design double face</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Mise en page optimisée</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Fichiers print-ready</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>2 retours inclus</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+
+      <!-- Carte Carte de Visite -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Carte de Visite</h3>
+        <p class="text-gray-600 mb-4 text-sm">Design professionnel de carte de visite.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          5 000 - 10 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Design simple</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Format standard</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Export professionnel</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Fichiers haute qualité</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>1 retour inclus</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+      
+      <!-- Carte Charte Graphique -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Charte Graphique</h3>
+        <p class="text-gray-600 mb-4 text-sm">Identité visuelle complète pour votre marque.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          50 000 - 80 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Palette de couleurs</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Polices</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Gabarits</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Guide d'utilisation</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Logo inclus</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="assistance" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary/10 rounded-full">
+          <i class="ri-customer-service-2-line ri-2x text-red-500"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Assistance Informatique</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Un support technique réactif et compétent pour résoudre vos problèmes informatiques et assurer la continuité de vos activités.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Carte Dépannage et Réparation -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Dépannage et Réparation</h3>
+          <p class="text-gray-600 mb-4 text-sm">Diagnostic et résolution de problèmes matériels et logiciels.</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            À partir de 15 000 <span class="text-sm font-normal text-gray-500">FCFA HT / intervention</span>
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Intervention rapide</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Réparation PC/Mac</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Suppression virus/malwares</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Récupération de données (base)</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+        
+        <!-- Carte Maintenance Préventive -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Maintenance Préventive</h3>
+          <p class="text-gray-600 mb-4 text-sm">Optimisation et entretien régulier de votre parc informatique.</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            À partir de 25 000 <span class="text-sm font-normal text-gray-500">FCFA HT / mois</span>
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Mises à jour système/logiciels</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Nettoyage physique/logique</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Vérification sécurité</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Conseils personnalisés</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+        
+        <!-- Carte Installation et Configuration -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Installation et Configuration</h3>
+          <p class="text-gray-600 mb-4 text-sm">Mise en place de nouveaux équipements et logiciels.</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            Sur devis
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Installation OS/logiciels</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Configuration réseau/imprimantes</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Transfert de données</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Formation à l'utilisation</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="documents" class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary/10 rounded-full">
+          <i class="ri-file-edit-line ri-2x text-red-500"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Traitement de Documents</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Optimisez la gestion de vos documents avec nos services professionnels de saisie, mise en page et numérisation.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Carte Saisie et Mise en Page -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Saisie et Mise en Page</h3>
+          <p class="text-gray-600 mb-4 text-sm">Transformation de vos documents manuscrits ou bruts en fichiers numériques professionnels.</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            À partir de 5 000 <span class="text-sm font-normal text-gray-500">FCFA HT / 10 pages</span>
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Saisie rapide et précise</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Mise en page professionnelle (Word, PDF)</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Correction orthographique et grammaticale</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Respect des chartes graphiques</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+        
+        <!-- Carte Conception de Présentations -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Conception de Présentations</h3>
+          <p class="text-gray-600 mb-4 text-sm">Création de présentations percutantes (PowerPoint, Google Slides).</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            À partir de 10 000 <span class="text-sm font-normal text-gray-500">FCFA HT / présentation</span>
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Design moderne et attractif</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Structuration claire du contenu</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Intégration de graphiques et médias</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Modèles personnalisables</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+        
+        <!-- Carte Numérisation et Archivage -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Numérisation et Archivage</h3>
+          <p class="text-gray-600 mb-4 text-sm">Conversion de vos documents papier en format numérique et organisation.</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            Sur devis
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Numérisation haute qualité</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Indexation et classement</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Conversion OCR (texte modifiable)</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Solutions de stockage sécurisé</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formation" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary/10 rounded-full">
+          <i class="ri-graduation-cap-line ri-2x text-red-500"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Formation</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Développez vos compétences et celles de vos équipes avec nos programmes de formation adaptés à vos besoins.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Carte Formation Bureautique -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Formation Bureautique</h3>
+          <p class="text-gray-600 mb-4 text-sm">Maîtrisez les outils essentiels (Word, Excel, PowerPoint).</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            À partir de 30 000 <span class="text-sm font-normal text-gray-500">FCFA HT / personne</span>
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Niveaux débutant à avancé</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Exercices pratiques</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Supports de cours fournis</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Formateurs certifiés</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+        
+        <!-- Carte Formation Web Design -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Formation Web Design</h3>
+          <p class="text-gray-600 mb-4 text-sm">Apprenez à créer des sites web modernes et responsives.</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            À partir de 75 000 <span class="text-sm font-normal text-gray-500">FCFA HT / personne</span>
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>HTML, CSS, JavaScript</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Principes de l'UX/UI Design</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Utilisation de CMS (WordPress)</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Projet pratique de fin de formation</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+        
+        <!-- Carte Formation Marketing Digital -->
+        <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Formation Marketing Digital</h3>
+          <p class="text-gray-600 mb-4 text-sm">Boostez votre visibilité en ligne et attirez plus de clients.</p>
+          <div class="text-2xl font-bold text-red-500 mb-4">
+            À partir de 60 000 <span class="text-sm font-normal text-gray-500">FCFA HT / personne</span>
+          </div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>SEO et référencement naturel</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Publicité en ligne (Google Ads, Facebook Ads)</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Marketing de contenu</li>
+            <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Analyse des performances</li>
+          </ul>
+          <a href="#contact-section" class="mt-auto bg-red-500 text-white px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center block">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="special-offers">
+    <h2 class="section-title">Nos Offres Spéciales</h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">Découvrez nos packs tout compris pour répondre à tous vos besoins à des tarifs avantageux.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Pack E-commerce -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col relative">
+        <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-lg">Économisez 20%</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-5">Pack E-commerce</h3>
+        <p class="text-gray-600 mb-4 text-sm">Solution complète pour lancer votre boutique en ligne avec tous les outils nécessaires.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          <span class="text-lg font-normal text-gray-500 line-through mr-2">450 000</span>360 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Site e-commerce clé en main</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Formation à l'administration</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Maintenance 6 mois incluse</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>SEO avancé</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Création de 10 fiches produits</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-gray-200 text-gray-800 px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-gray-300 transition-colors text-center block">Voir les détails</a>
+      </div>
+      
+      <!-- Pack Design Complet -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col relative">
+        <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-lg">Économisez 15%</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-5">Pack Design Complet</h3>
+        <p class="text-gray-600 mb-4 text-sm">Identité visuelle complète avec tous les supports de communication.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          <span class="text-lg font-normal text-gray-500 line-through mr-2">780 000</span>663 000 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Logo premium</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Charte graphique</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Cartes de visite</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>En-tête email</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Flyer ou affiche</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-gray-200 text-gray-800 px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-gray-300 transition-colors text-center block">Voir les détails</a>
+      </div>
+      
+      <!-- Pack Starter -->
+      <div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300 flex flex-col relative">
+        <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-lg">Économisez 25%</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 mt-5">Pack Starter</h3>
+        <p class="text-gray-600 mb-4 text-sm">Solution idéale pour les startups et petites entreprises.</p>
+        <div class="text-2xl font-bold text-red-500 mb-4">
+          <span class="text-lg font-normal text-gray-500 line-through mr-2">215 000</span>161 250 <span class="text-sm font-normal text-gray-500">FCFA HT</span>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-6 flex-grow">
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Site vitrine avancé</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Logo simple</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Hébergement 1 an</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Maintenance 3 mois</li>
+          <li class="flex items-center"><i class="ri-check-line text-red-500 mr-2"></i>Création de 3 pages</li>
+        </ul>
+        <a href="#contact-section" class="mt-auto bg-gray-200 text-gray-800 px-5 py-2 !rounded-button font-medium whitespace-nowrap hover:bg-gray-300 transition-colors text-center block">Voir les détails</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary/10 rounded-full">
+          <i class="ri-chat-quote-line ri-2x text-red-500"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ce que nos clients disent</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">La satisfaction de nos clients est notre meilleure récompense. Découvrez leurs témoignages.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="testimonial-card bg-white rounded-lg shadow-lg p-8 transform transition-all duration-300 hover:scale-105">
+          <p class="text-gray-700 text-lg mb-6 italic">"M-Tech Group a transformé notre présence en ligne avec un site web moderne et efficace. Leur expertise a dépassé nos attentes !"</p>
+          <p class="text-gray-900 font-semibold">Marie D.</p>
+          <p class="text-sm text-gray-500">Entreprise de Mode</p>
+        </div>
+        <div class="testimonial-card bg-white rounded-lg shadow-lg p-8 transform transition-all duration-300 hover:scale-105">
+          <p class="text-gray-700 text-lg mb-6 italic">"Le nouveau logo créé par leur équipe représente parfaitement notre vision. Un travail professionnel et créatif."</p>
+          <p class="text-gray-900 font-semibold">Thomas L.</p>
+          <p class="text-sm text-gray-500">Start-up Tech</p>
+        </div>
+        <div class="testimonial-card bg-white rounded-lg shadow-lg p-8 transform transition-all duration-300 hover:scale-105">
+          <p class="text-gray-700 text-lg mb-6 italic">"Service client exceptionnel et résultats remarquables. Je recommande vivement leurs services de design."</p>
+          <p class="text-gray-900 font-semibold">Sophie M.</p>
+          <p class="text-sm text-gray-500">Cabinet Conseil</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-section" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-primary/10 rounded-full">
+          <i class="ri-mail-send-line ri-2x text-red-500"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contactez-nous</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Une question, un projet ? N'hésitez pas à nous contacter via le formulaire ci-dessous.</p>
+      </div>
+      <form id="contactForm" class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg space-y-6" novalidate>
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm">
+          <div class="error-message text-red-500 text-xs mt-1 hidden" id="nameError">Veuillez entrer votre nom</div>
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm">
+          <div class="error-message text-red-500 text-xs mt-1 hidden" id="emailError">Veuillez entrer un email valide</div>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm"></textarea>
+          <div class="error-message text-red-500 text-xs mt-1 hidden" id="messageError">Veuillez entrer votre message</div>
+        </div>
+        <div>
+          <button type="submit" class="w-full bg-red-500 text-white px-6 py-3 !rounded-button font-semibold hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Envoyer le message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2025 M-Tech Group. Tous droits réservés.</p>
+      <p class="text-xs mt-2">Conçu avec <i class="ri-heart-fill text-red-500"></i> par M-Tech Group</p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Form validation
+    const contactForm = document.getElementById('contactForm');
+    const formFields = ['name', 'email', 'message'];
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showError(fieldId, show) {
+      const errorElement = document.getElementById(fieldId + 'Error');
+      errorElement.style.display = show ? 'block' : 'none';
+    }
+
+    formFields.forEach(field => {
+      const input = document.getElementById(field);
+      input.addEventListener('input', () => {
+        if (field === 'email') {
+          showError(field, input.value && !validateEmail(input.value));
+        } else {
+          showError(field, !input.value.trim());
+        }
+      });
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      formFields.forEach(field => {
+        const input = document.getElementById(field);
+        const value = input.value.trim();
+
+        if (field === 'email') {
+          if (!value || !validateEmail(value)) {
+            showError(field, true);
+            isValid = false;
+          }
+        } else if (!value) {
+          showError(field, true);
+          isValid = false;
+        }
+      });
+
+      if (isValid) {
+        Toastify({
+          text: "Message envoyé avec succès!",
+          duration: 3000,
+          gravity: "top",
+          position: 'right',
+          backgroundColor: "var(--primary)",
+        }).showToast();
+
+        contactForm.reset();
+      }
+    });
+
+    // Intersection Observer pour les animations au défilement
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .pack-card, .testimonial-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
