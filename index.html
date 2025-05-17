@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M-Tech Group - Solutions numériques sur mesure</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#ff9900'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520digital%2520solutions%2520office%2520with%2520clean%2520workspace%252C%2520computer%2520screens%2520showing%2520web%2520design%2520and%2520digital%2520marketing%2520content.%2520The%2520left%2520side%2520has%2520a%2520clean%2520gradient%2520background%2520that%2520transitions%2520smoothly%2520to%2520the%2520right%2520side%2520image.%2520Professional%2520atmosphere%252C%2520soft%2520lighting%252C%2520modern%2520technology%2520devices%252C%2520minimalist%2520design&width=1920&height=800&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.testimonial-card {
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: scale(1.02);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #e60000;
+}
+.dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 10;
+}
+.dropdown-container:hover .dropdown {
+display: block;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 18px;
+height: 18px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #e60000;
+border-color: #e60000;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 5px;
+top: 2px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico']">
+  <span class="text-red-500">M</span><span class="text-black">-Tech Group</span>
+</a>
+
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Accueil</a>
+<div class="dropdown-container relative">
+<button class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center">
+Services
+<span class="ml-1 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</span>
+</button>
+<div class="dropdown bg-white shadow-lg rounded-md py-2 w-64">
+<a href="#" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Création de sites web</a>
+<a href="#" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Design graphique</a>
+<a href="#" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Assistance informatique</a>
+<a href="#" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Traitement de documents</a>
+<a href="#" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Formation</a>
+</div>
+</div>
+<a href="#about" class="text-gray-800 font-medium hover:text-primary transition-colors">À propos</a>
+<a href="#contact" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+<a href="#contact" class="hidden md:inline-block bg-primary text-white px-5 py-2 text-white bg-red-500 hover:bg-red-600 rounded-full transition-colors">Demander un devis</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section pt-24 relative">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30"></div>
+<div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Solutions numériques sur mesure</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">Nous créons des solutions digitales adaptées à vos besoins spécifiques pour propulser votre entreprise vers le succès.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#contact" class="bg-red-500 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center">Demander un devis</a>
+<a href="#services" class="bg-white text-red-500 border border-red-500 px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors text-center">Découvrir nos services</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Services</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Découvrez notre gamme complète de solutions numériques conçues pour répondre à tous vos besoins professionnels.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+<i class="ri-code-s-slash-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Création de sites web</h3>
+<p class="text-gray-600 mb-5">Sites vitrines, e-commerce ou applications web sur mesure adaptés à votre image de marque et à vos objectifs commerciaux.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+En savoir plus
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+<i class="ri-palette-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Design graphique</h3>
+<p class="text-gray-600 mb-5">Création de logos, chartes graphiques, supports de communication et identités visuelles qui reflètent l'essence de votre entreprise.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+En savoir plus
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+<i class="ri-customer-service-2-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Assistance informatique</h3>
+<p class="text-gray-600 mb-5">Support technique, maintenance préventive et résolution de problèmes pour assurer le bon fonctionnement de vos systèmes.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+En savoir plus
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- Service 4 -->
+<div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+<i class="ri-file-text-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Traitement de documents</h3>
+<p class="text-gray-600 mb-5">Saisie, mise en page, traduction et numérisation de documents avec une attention particulière à la qualité et aux délais.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+En savoir plus
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- Service 5 -->
+<div class="service-card bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+<i class="ri-graduation-cap-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Formation</h3>
+<p class="text-gray-600 mb-5">Programmes de formation personnalisés en présentiel ou en ligne pour développer les compétences numériques de vos équipes.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+En savoir plus
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- CTA Card -->
+<div class="bg-primary rounded-lg shadow-md p-6 text-white flex flex-col justify-center">
+<h3 class="text-xl font-semibold mb-3">Besoin d'une solution personnalisée ?</h3>
+<p class="mb-5">Contactez notre équipe pour discuter de vos besoins spécifiques et obtenir un devis sur mesure.</p>
+<a href="#contact" class="bg-white text-primary px-5 py-2 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors text-center font-medium mt-auto">Nous contacter</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=professional%2520diverse%2520team%2520of%2520digital%2520experts%2520working%2520in%2520a%2520modern%2520office%2520environment%2520with%2520computers%2520and%2520digital%2520devices.%2520The%2520team%2520consists%2520of%2520web%2520designers%252C%2520developers%2520and%2520IT%2520specialists%2520collaborating%2520on%2520projects.%2520African%2520setting%252C%2520professional%2520attire%252C%2520bright%2520modern%2520workspace%2520with%2520natural%2520lighting&width=600&height=500&seq=2&orientation=landscape" alt="L'équipe M-Tech Group" class="rounded-lg shadow-lg w-full h-auto object-cover object-top">
+</div>
+<div class="md:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">À propos de M-Tech Group</h2>
+<p class="text-gray-600 mb-4">Fondé en 2020 à Abidjan, M-Tech Group est devenu un acteur incontournable dans le domaine des solutions numériques en Côte d'Ivoire. Notre mission est d'accompagner les entreprises et les particuliers dans leur transformation digitale.</p>
+<p class="text-gray-600 mb-6">Nous combinons expertise technique, créativité et compréhension approfondie des besoins locaux pour offrir des solutions sur mesure qui répondent parfaitement aux attentes de nos clients.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-check-line ri-lg text-red-500"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Expertise locale</h4>
+<p class="text-sm text-gray-600">Connaissance approfondie du marché ivoirien</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-check-line ri-lg text-red-500"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Service personnalisé</h4>
+<p class="text-sm text-gray-600">Solutions adaptées à vos besoins spécifiques</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-check-line ri-lg text-red-500"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Équipe qualifiée</h4>
+<p class="text-sm text-gray-600">Professionnels certifiés et expérimentés</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-check-line ri-lg text-red-500"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Support continu</h4>
+<p class="text-sm text-gray-600">Assistance technique et suivi régulier</p>
+</div>
+</div>
+</div>
+<a href="#" class="bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors inline-block">Découvrir M-Tech Group</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ce que disent nos clients</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Découvrez les témoignages de nos clients satisfaits qui ont fait confiance à M-Tech Group pour leurs projets numériques.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="testimonial-card bg-white rounded-lg shadow-md p-6">
+<div class="flex items-center mb-4">
+<div class="text-amber-400 flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"M-Tech Group a transformé notre présence en ligne avec un site web professionnel qui reflète parfaitement notre image de marque. Leur équipe a été à l'écoute de nos besoins et a livré un résultat qui dépasse nos attentes."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 text-primary">
+<i class="ri-user-line ri-lg"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Kouamé Adjoua</h4>
+<p class="text-sm text-gray-500">Directrice, Boutique Élégance</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card bg-white rounded-lg shadow-md p-6">
+<div class="flex items-center mb-4">
+<div class="text-amber-400 flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"Le service d'assistance informatique de M-Tech Group est exceptionnel. Ils ont résolu nos problèmes techniques rapidement et efficacement, nous permettant de maintenir notre activité sans interruption. Je les recommande vivement."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 text-primary">
+<i class="ri-user-line ri-lg"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Diallo Mamadou</h4>
+<p class="text-sm text-gray-500">Gérant, Cabinet Juridique Diallo</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card bg-white rounded-lg shadow-md p-6">
+<div class="flex items-center mb-4">
+<div class="text-amber-400 flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"Les formations dispensées par M-Tech Group ont permis à notre équipe d'acquérir des compétences essentielles en informatique. Les formateurs sont compétents, patients et adaptent leur enseignement à notre niveau."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 text-primary">
+<i class="ri-user-line ri-lg"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Konaté Aminata</h4>
+<p class="text-sm text-gray-500">RH, Société Ivoirienne de Distribution</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 md:py-20 bg-primary">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Prêt à transformer votre présence numérique ?</h2>
+<p class="text-lg text-white/90 max-w-3xl mx-auto mb-8">Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment M-Tech Group peut vous aider à atteindre vos objectifs.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="#contact" class="bg-white text-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-100 transition-colors">Demander un devis</a>
+<a href="tel:+22507080910" class="bg-transparent text-white border border-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-white/10 transition-colors flex items-center justify-center">
+<span class="mr-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line"></i>
+</span>
++225 07 08 09 10
+</a>
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+
+<!-- Vitalll c'est ici ton veritble role -->
+<section id="contact" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contactez-nous</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Vous avez des questions ou besoin d'un devis ? N'hésitez pas à nous contacter. Notre équipe est à votre disposition pour vous répondre dans les plus brefs délais.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Votre nom">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="votre@email.com">
+</div>
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="+225 XX XX XX XX">
+</div>
+<div>
+<label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service souhaité</label>
+<div class="relative">
+<select id="service" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8">
+<option value="" selected disabled>Sélectionnez un service</option>
+<option value="web">Création de sites web</option>
+<option value="design">Design graphique</option>
+<option value="support">Assistance informatique</option>
+<option value="documents">Traitement de documents</option>
+<option value="training">Formation</option>
+<option value="other">Autre</option>
+</select>
+
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-gray-500"></i>
+</div>
+</div>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Décrivez votre projet ou votre demande..."></textarea>
+</div>
+<div class="flex items-start">
+<input type="checkbox" id="consent" class="custom-checkbox mt-1">
+<label for="consent" class="ml-2 text-sm text-gray-600">J'accepte que mes données soient traitées conformément à la politique de confidentialité de M-Tech Group.</label>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full md:w-auto">Envoyer ma demande</button>
+</form>
+</div>
+<div class="bg-gray-50 rounded-lg p-8">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Informations de contact</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-map-pin-line text-primary text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Adresse</h4>
+<p class="text-gray-600">Cocody Angré, 7ème Tranche<br>Abidjan, Côte d'Ivoire</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-phone-line text-primary text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Téléphone</h4>
+<p class="text-gray-600">+225 07 08 09 10</p>
+<p class="text-gray-600">+225 01 02 03 04</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-mail-line text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Email</h4>
+<p class="text-gray-600">contact@mtechgroup.ci</p>
+<p class="text-gray-600">info@mtechgroup.ci</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-time-line text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Horaires d'ouverture</h4>
+<p class="text-gray-600">Lundi - Vendredi: 8h00 - 22h00</p>
+<p class="text-gray-600">Samedi: 9h00 - 22h00</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-medium text-gray-900 mb-4">Suivez-nous</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill text-red-500"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-x-fill text-red-500"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line text-red-500"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-linkedin-fill text-red-500"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/2250708091011" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors z-50">
+<i class="ri-whatsapp-line ri-xl"></i>
+</a>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<h3 class="text-xl font-['Pacifico'] text-white mb-6">M-Tech Group</h3>
+<p class="text-gray-400 mb-6">Votre partenaire de confiance pour toutes vos solutions numériques en Côte d'Ivoire. Expertise locale, service personnalisé et résultats garantis.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Liens rapides</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Nos services</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Création de sites web</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Design graphique</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Assistance informatique</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Traitement de documents</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Formation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-map-pin-line"></i>
+</span>
+<span class="text-gray-400">Cocody Angré, 7ème Tranche, Abidjan, Côte d'Ivoire</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-phone-line"></i>
+</span>
+<span class="text-gray-400">+225 07 08 09 10</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-mail-line"></i>
+</span>
+<span class="text-gray-400">contact@mtechgroup.ci</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 M-Tech Group. Tous droits réservés.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-500 text-sm">Moyens de paiement acceptés:</span>
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-bank-card-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu 
+const menuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
+mobileMenu.innerHTML = `
+<div class="flex justify-between items-center p-4 border-b">
+<span class="text-2xl font-['Pacifico'] text-primary">M-Tech Group</span>
+<button class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<nav class="p-4">
+<ul class="space-y-4">
+<li><a href="#" class="block py-2 text-gray-800 font-medium">Accueil</a></li>
+<li>
+<div class="py-2 text-gray-800 font-medium flex justify-between items-center">
+Services
+<i class="ri-arrow-down-s-line"></i>
+</div>
+<ul class="pl-4 mt-2 space-y-2 hidden">
+<li><a href="#" class="block py-2 text-gray-700">Création de sites web</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Design graphique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Assistance informatique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Traitement de documents</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Formation</a></li>
+</ul>
+</li>
+<li><a href="#about" class="block py-2 text-gray-800 font-medium">À propos</a></li>
+<li><a href="#contact" class="block py-2 text-gray-800 font-medium">Contact</a></li>
+</ul>
+</nav>
+<div class="p-4 mt-4">
+<a href="#contact" class="bg-primary text-white px-5 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full block text-center">Demander un devis</a>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-full');
+});
+mobileMenu.querySelector('button').addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+});
+// Services dropdown in mobile menu
+const serviceDropdown = mobileMenu.querySelector('.ri-arrow-down-s-line').parentNode;
+const serviceSubmenu = serviceDropdown.nextElementSibling;
+serviceDropdown.addEventListener('click', function() {
+serviceSubmenu.classList.toggle('hidden');
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+if (this.getAttribute('href') === '#') return;
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+mobileMenu.classList.add('translate-x-full');
+}
+});
+});
+});
+</script>
+</body>
+</html>
