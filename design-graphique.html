@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Graphique - M-Tech Group</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#ff9900'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=professional%2520graphic%2520design%2520workspace%2520with%2520modern%2520design%2520elements%252C%2520color%2520swatches%252C%2520typography%2520samples%252C%2520and%2520branding%2520materials.%2520The%2520left%2520side%2520has%2520a%2520clean%2520gradient%2520blue%2520background%2520that%2520transitions%2520smoothly%2520to%2520the%2520right%2520side%2520image.%2520Creative%2520atmosphere%252C%2520soft%2520lighting%252C%2520design%2520tools%2520visible%252C%2520minimalist%2520workspace%2520with%2520high%2520quality%2520equipment&width=1920&height=800&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.portfolio-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+input:focus, textarea:focus, select:focus {
+outline: none;
+border-color: #e60000;
+}
+.dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 10;
+}
+.dropdown-container:hover .dropdown {
+display: block;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 18px;
+height: 18px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #e60000;
+border-color: #e60000;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 5px;
+top: 2px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.timeline-step:not(:last-child)::after {
+content: '';
+position: absolute;
+top: 24px;
+left: 100%;
+width: calc(100% - 48px);
+height: 2px;
+background-color: #e5e7eb;
+}
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.accordion-content.active {
+max-height: 500px;
+}
+.portfolio-filter.active {
+background-color: #e60000;
+color: white;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-['Pacifico']">
+  <span class="text-red-500">M</span><span class="text-black">-Tech Group</span>
+</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="index.html" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">Accueil</a>
+<div class="dropdown-container relative">
+<button class="text-primary font-medium flex items-center">
+Services
+<span class="ml-1 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</span>
+</button>
+<div class="dropdown bg-white shadow-lg rounded-md py-2 w-64">
+<a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/e8df6c54-fba7-4103-a03b-1880104ed884" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Création de sites web</a>
+<a href="design-graphique.html" data-readdy="true" class="block px-4 py-2 bg-gray-50 text-primary">Design graphique</a>
+<a href="assistance-informatique.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Assistance informatique</a>
+<a href="traitement-documents.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Traitement de documents</a>
+<a href="formation.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Formation</a>
+</div>
+</div>
+<a href="index.html#about" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">À propos</a>
+<a href="#contact-form" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+<a href="#contact-form" class="hidden md:inline-block bg-red-600 text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-red-600 transition-colors">Demander un devis</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section pt-24 relative">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30"></div>
+<div class="container mx-auto px-4 py-20 md:py-32 relative z-10 w-full">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Services de Design Graphique</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">Nous créons des identités visuelles percutantes qui reflètent l'essence de votre marque et captent l'attention de votre audience cible.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#contact-form" class="bg-red-600 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center">Demander un devis</a>
+<a href="#portfolio" class="bg-white text-red-600 border border-red-600 px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors text-center">Voir nos réalisations</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Types de Services -->
+<section id="services" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Services de Design</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Découvrez notre gamme complète de services de design graphique pour répondre à tous vos besoins visuels.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Logo & Identité -->
+<div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-paint-brush-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Logo & Identité</h3>
+<p class="text-gray-600 mb-5">Création d'identités visuelles distinctives qui reflètent les valeurs et la personnalité de votre entreprise.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Création de logo</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Charte graphique</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Identité visuelle complète</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Papeterie d'entreprise</span>
+</li>
+</ul>
+<a href="#contact-form" class="text-primary font-medium flex items-center hover:underline">
+Demander un devis
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- Supports Marketing -->
+<div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-file-list-3-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Supports Marketing</h3>
+<p class="text-gray-600 mb-5">Conception de supports imprimés percutants pour promouvoir efficacement votre entreprise et vos produits.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Flyers et brochures</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Affiches et posters</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Catalogues produits</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Cartes de visite</span>
+</li>
+</ul>
+<a href="#contact-form" class="text-primary font-medium flex items-center hover:underline">
+Demander un devis
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- Design Digital -->
+<div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-computer-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Design Digital</h3>
+<p class="text-gray-600 mb-5">Création de visuels numériques attractifs pour renforcer votre présence en ligne et sur les réseaux sociaux.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Posts réseaux sociaux</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Bannières web</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Newsletters</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Signatures email</span>
+</li>
+</ul>
+<a href="#contact-form" class="text-primary font-medium flex items-center hover:underline">
+Demander un devis
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+<!-- Design UI/UX -->
+<div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-layout-2-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Design UI/UX</h3>
+<p class="text-gray-600 mb-5">Conception d'interfaces utilisateur intuitives et esthétiques pour applications et sites web.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Maquettes de sites web</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Design d'applications</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Prototypage interactif</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Icônes et illustrations</span>
+</li>
+</ul>
+<a href="#contact-form" class="text-primary font-medium flex items-center hover:underline">
+Demander un devis
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line text-red-500"></i>
+</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Processus de Création -->
+<section id="process" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre Processus Créatif</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Une approche méthodique et collaborative pour transformer vos idées en designs percutants.</p>
+</div>
+<div class="hidden md:flex justify-between items-start relative mb-16">
+<!-- Timeline desktop -->
+<div class="w-full flex justify-between">
+<!-- Step 1 -->
+<div class="timeline-step relative flex flex-col items-center w-1/5">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">1</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Brief</h4>
+<p class="text-sm text-gray-600 text-center">Analyse de vos besoins et objectifs</p>
+</div>
+<!-- Step 2 -->
+<div class="timeline-step relative flex flex-col items-center w-1/5">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">2</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Recherche</h4>
+<p class="text-sm text-gray-600 text-center">Exploration et étude de marché</p>
+</div>
+<!-- Step 3 -->
+<div class="timeline-step relative flex flex-col items-center w-1/5">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">3</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Concept</h4>
+<p class="text-sm text-gray-600 text-center">Création des premières propositions</p>
+</div>
+<!-- Step 4 -->
+<div class="timeline-step relative flex flex-col items-center w-1/5">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">4</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Révision</h4>
+<p class="text-sm text-gray-600 text-center">Ajustements selon vos retours</p>
+</div>
+<!-- Step 5 -->
+<div class="timeline-step relative flex flex-col items-center w-1/5">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">5</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Livraison</h4>
+<p class="text-sm text-gray-600 text-center">Finalisation et livraison des fichiers</p>
+</div>
+</div>
+</div>
+<!-- Timeline mobile -->
+<div class="md:hidden space-y-8">
+<!-- Step 1 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">1</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Brief</h4>
+<p class="text-gray-600">Nous commençons par comprendre vos besoins, votre marque et vos objectifs commerciaux.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/80 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">2</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Recherche</h4>
+<p class="text-gray-600">Étude de votre secteur, de votre concurrence et des tendances actuelles en design.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/70 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">3</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Concept</h4>
+<p class="text-gray-600">Création de plusieurs propositions créatives basées sur notre analyse.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/60 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">4</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Révision</h4>
+<p class="text-gray-600">Affinage des designs selon vos commentaires jusqu'à satisfaction complète.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/50 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">5</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Livraison</h4>
+<p class="text-gray-600">Finalisation et livraison des fichiers dans tous les formats nécessaires.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#contact-form" class="bg-red-600 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors inline-block">Démarrer votre projet</a>
+</div>
+</div>
+</section>
+<!-- Portfolio -->
+<section id="portfolio" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre Portfolio</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Découvrez quelques-unes de nos réalisations récentes qui illustrent notre expertise en design graphique.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-2 mb-10">
+<button class="portfolio-filter active px-4 py-2 rounded-full bg-gray-200 text-gray-700 text-sm font-medium transition-colors" data-filter="all">Tous</button>
+<button class="portfolio-filter px-4 py-2 rounded-full bg-gray-200 text-gray-700 text-sm font-medium transition-colors" data-filter="logo">Logos</button>
+<button class="portfolio-filter px-4 py-2 rounded-full bg-gray-200 text-gray-700 text-sm font-medium transition-colors" data-filter="print">Print</button>
+<button class="portfolio-filter px-4 py-2 rounded-full bg-gray-200 text-gray-700 text-sm font-medium transition-colors" data-filter="digital">Digital</button>
+<button class="portfolio-filter px-4 py-2 rounded-full bg-gray-200 text-gray-700 text-sm font-medium transition-colors" data-filter="ui">UI/UX</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Portfolio Item 1 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-category="logo">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520minimalist%2520logo%2520design%2520for%2520a%2520luxury%2520brand%2520with%2520elegant%2520typography%2520and%2520simple%2520geometric%2520elements.%2520Professional%2520branding%2520presentation%2520on%2520high-quality%2520paper%2520with%2520embossed%2520effect.%2520The%2520logo%2520features%2520clean%2520lines%2520and%2520sophisticated%2520color%2520palette%2520with%2520gold%2520accents.%2520Graphic%2520design%2520portfolio%2520presentation%2520with%2520attention%2520to%2520detail&width=600&height=400&seq=1&orientation=landscape" alt="Logo Élégance Parfumerie" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Élégance Parfumerie</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Logo</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Création d'une identité visuelle sophistiquée pour une boutique de parfums de luxe à Abidjan.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le projet
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 2 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-category="print">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520brochure%2520design%2520for%2520a%2520corporate%2520business%2520with%2520clean%2520layout%2520and%2520modern%2520typography.%2520The%2520brochure%2520features%2520high-quality%2520product%2520photography%252C%2520infographics%252C%2520and%2520company%2520information%2520presented%2520in%2520an%2520elegant%2520way.%2520Print%2520design%2520portfolio%2520piece%2520with%2520attention%2520to%2520color%2520harmony%2520and%2520readability&width=600&height=400&seq=2&orientation=landscape" alt="Brochure Azur Immobilier" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Azur Immobilier</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Print</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Conception d'une brochure premium présentant les propriétés de luxe d'une agence immobilière.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le projet
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 3 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-category="digital">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=creative%2520social%2520media%2520campaign%2520design%2520with%2520cohesive%2520visual%2520identity%2520across%2520multiple%2520platforms.%2520The%2520designs%2520feature%2520vibrant%2520colors%252C%2520engaging%2520typography%252C%2520and%2520eye-catching%2520graphics%2520optimized%2520for%2520Instagram%252C%2520Facebook%252C%2520and%2520Twitter.%2520Digital%2520marketing%2520design%2520portfolio%2520example%2520with%2520consistent%2520branding%2520elements&width=600&height=400&seq=3&orientation=landscape" alt="Campagne Tropicana" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Tropicana Juice</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Digital</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Création d'une campagne visuelle pour les réseaux sociaux mettant en valeur une nouvelle gamme de jus.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le projet
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 4 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-category="ui">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520mobile%2520app%2520interface%2520design%2520with%2520clean%2520user%2520experience%2520layout.%2520The%2520UI%2520features%2520intuitive%2520navigation%252C%2520custom%2520icons%252C%2520and%2520consistent%2520visual%2520elements%2520across%2520multiple%2520screens.%2520The%2520design%2520shows%2520attention%2520to%2520typography%2520hierarchy%252C%2520color%2520psychology%252C%2520and%2520usability%2520principles.%2520UX%252FUI%2520design%2520portfolio%2520example&width=600&height=400&seq=4&orientation=landscape" alt="Application Santé+" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Application Santé+</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">UI/UX</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Design d'interface pour une application mobile de suivi de santé avec un focus sur l'expérience utilisateur.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le projet
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 5 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-category="logo">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=complete%2520brand%2520identity%2520design%2520for%2520a%2520modern%2520coffee%2520shop%2520with%2520logo%252C%2520typography%2520system%252C%2520color%2520palette%252C%2520and%2520brand%2520applications.%2520The%2520identity%2520includes%2520packaging%252C%2520signage%252C%2520and%2520merchandise%2520mockups%2520with%2520a%2520cohesive%2520visual%2520language.%2520Branding%2520design%2520portfolio%2520piece%2520with%2520warm%2520earthy%2520tones%2520and%2520artisanal%2520aesthetic&width=600&height=400&seq=5&orientation=landscape" alt="Café Arabica" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Café Arabica</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Logo</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Développement complet de l'identité visuelle pour une chaîne de cafés haut de gamme, du logo aux emballages.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le projet
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 6 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-category="print">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=creative%2520annual%2520report%2520design%2520with%2520infographics%252C%2520data%2520visualization%252C%2520and%2520professional%2520layout.%2520The%2520report%2520features%2520corporate%2520photography%252C%2520financial%2520charts%252C%2520and%2520company%2520milestones%2520presented%2520in%2520a%2520visually%2520engaging%2520way.%2520Print%2520design%2520portfolio%2520example%2520with%2520attention%2520to%2520information%2520hierarchy%2520and%2520readability&width=600&height=400&seq=6&orientation=landscape" alt="Rapport Annuel Banque Atlantique" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Banque Atlantique</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Print</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Conception du rapport annuel avec infographies et mise en page élégante pour une institution financière.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le projet
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#contact-form" class="bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors inline-block">Discuter de votre projet</a>
+</div>
+</div>
+</section>
+<!-- Tarifs -->
+<section id="pricing" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Tarifs</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Des solutions adaptées à tous les budgets avec un excellent rapport qualité-prix.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Forfait Essentiel -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6 border-b">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Logo Essentiel</h3>
+<p class="text-gray-600 mb-6">Idéal pour les startups et petites entreprises</p>
+<div class="flex items-end mb-4">
+<span class="text-4xl font-bold text-gray-900">150 000</span>
+<span class="text-gray-600 ml-2 mb-1">FCFA</span>
+</div>
+<p class="text-sm text-gray-500">Prix de départ</p>
+</div>
+<div class="p-6">
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">2 propositions de logo</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">2 cycles de révision</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Fichiers haute résolution</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Formats JPG, PNG, PDF</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-close-line text-gray-400 text-sm"></i>
+</div>
+<span class="text-gray-400">Charte graphique complète</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-close-line text-gray-400 text-sm"></i>
+</div>
+<span class="text-gray-400">Fichiers sources modifiables</span>
+</li>
+</ul>
+<a href="#contact-form" class="block text-center bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors w-full">Demander un devis</a>
+</div>
+</div>
+<!-- Forfait Business -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden relative">
+<div class="absolute top-0 right-0">
+<div class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-bl-lg">Populaire</div>
+</div>
+<div class="p-6 border-b">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Identité Business</h3>
+<p class="text-gray-600 mb-6">Pour les entreprises en croissance</p>
+<div class="flex items-end mb-4">
+<span class="text-4xl font-bold text-gray-900">350 000</span>
+<span class="text-gray-600 ml-2 mb-1">FCFA</span>
+</div>
+<p class="text-sm text-gray-500">Prix de départ</p>
+</div>
+<div class="p-6">
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">3 propositions de logo</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Charte graphique complète</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Papeterie d'entreprise</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">3 cycles de révision</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Tous formats de fichiers</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Fichiers sources modifiables</span>
+</li>
+</ul>
+<a href="#contact-form" class="block text-center bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full">Demander un devis</a>
+</div>
+</div>
+<!-- Forfait Premium -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6 border-b">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Pack Premium</h3>
+<p class="text-gray-600 mb-6">Solution complète pour votre marque</p>
+<div class="flex items-end mb-4">
+<span class="text-4xl font-bold text-gray-900">Sur mesure</span>
+</div>
+<p class="text-sm text-gray-500">Selon vos besoins</p>
+</div>
+<div class="p-6">
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Identité visuelle complète</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Supports marketing personnalisés</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Design pour réseaux sociaux</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Révisions illimitées</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Tous formats de fichiers</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Accompagnement stratégique</span>
+</li>
+</ul>
+<a href="#contact-form" class="block text-center bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors w-full">Demander un devis</a>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-white rounded-lg shadow-md p-6 md:p-8">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Services additionnels</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-file-list-3-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Flyer/Brochure</h4>
+<p class="text-sm text-gray-600">À partir de 75 000 FCFA</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-layout-masonry-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Affiche publicitaire</h4>
+<p class="text-sm text-gray-600">À partir de 100 000 FCFA</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-instagram-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Pack réseaux sociaux</h4>
+<p class="text-sm text-gray-600">À partir de 150 000 FCFA</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-t-shirt-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Design merchandising</h4>
+<p class="text-sm text-gray-600">À partir de 125 000 FCFA</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-smartphone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">UI/UX Application</h4>
+<p class="text-sm text-gray-600">À partir de 300 000 FCFA</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-book-open-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Catalogue produits</h4>
+<p class="text-sm text-gray-600">À partir de 200 000 FCFA</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section id="faq" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions Fréquentes</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Trouvez les réponses aux questions les plus courantes sur nos services de design graphique.</p>
+</div>
+<div class="max-w-3xl mx-auto space-y-4">
+<!-- Question 1 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Quels sont les éléments nécessaires pour créer mon logo ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Pour créer un logo efficace, nous avons besoin des éléments suivants :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Informations sur votre entreprise (activité, valeurs, vision)</li>
+<li>Votre cible et positionnement sur le marché</li>
+<li>Préférences en termes de style, couleurs et typographie</li>
+<li>Exemples de logos que vous appréciez</li>
+<li>Contraintes techniques éventuelles (utilisation sur différents supports)</li>
+</ul>
+<p class="mt-2">Plus vous nous fournissez d'informations précises, plus nous pourrons créer un logo qui correspond parfaitement à votre vision.</p>
+</div>
+</div>
+</div>
+<!-- Question 2 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Quels formats de fichiers recevrai-je pour mon logo ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Selon le forfait choisi, vous recevrez différents formats :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Formats raster (JPG, PNG) pour utilisation web et impression standard</li>
+<li>Formats vectoriels (AI, EPS, SVG, PDF) pour une qualité optimale à n'importe quelle taille</li>
+<li>Versions en couleur, noir et blanc, et monochrome</li>
+<li>Versions adaptées aux différents supports (web, print, réseaux sociaux)</li>
+</ul>
+<p class="mt-2">Les forfaits supérieurs incluent également les fichiers sources modifiables et des variantes du logo pour différentes utilisations.</p>
+</div>
+</div>
+</div>
+<!-- Question 3 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Combien de temps faut-il pour créer une identité visuelle complète ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Les délais varient selon l'ampleur du projet :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Création de logo simple : 1 à 2 semaines</li>
+<li>Identité visuelle complète : 3 à 4 semaines</li>
+<li>Projets complexes avec multiples supports : 4 à 8 semaines</li>
+</ul>
+<p class="mt-2">Ces délais incluent les phases de recherche, création de concepts, révisions et finalisation. Nous établissons un calendrier précis au début du projet et vous tenons informé de l'avancement à chaque étape.</p>
+</div>
+</div>
+</div>
+<!-- Question 4 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Quels sont les droits d'utilisation sur les designs créés ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Une fois le projet finalisé et entièrement payé :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Vous obtenez les droits d'utilisation complets et exclusifs sur tous les designs créés</li>
+<li>Vous pouvez utiliser les designs sur tous les supports et dans tous les médias</li>
+<li>Vous pouvez modifier et adapter les designs selon vos besoins futurs</li>
+</ul>
+<p class="mt-2">Nous conservons le droit d'utiliser les designs dans notre portfolio pour présenter notre travail, sauf accord contraire spécifié dans le contrat.</p>
+</div>
+</div>
+</div>
+<!-- Question 5 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Comment se déroule le processus de révision ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Notre processus de révision est structuré pour garantir votre satisfaction :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Présentation des concepts initiaux pour votre feedback</li>
+<li>Collecte de vos commentaires détaillés</li>
+<li>Révisions selon vos retours (nombre de cycles selon le forfait choisi)</li>
+<li>Ajustements fins jusqu'à validation finale</li>
+</ul>
+<p class="mt-2">Nous vous encourageons à fournir des retours précis et constructifs pour optimiser le processus. Des révisions supplémentaires au-delà de celles incluses dans votre forfait peuvent être réalisées moyennant des frais additionnels.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section id="contact-form" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Discutons de votre projet</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Contactez-nous pour discuter de vos besoins en design graphique et obtenir un devis personnalisé.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<form class="space-y-6" action="sendmail.php" method="POST" enctype="multipart/form-data">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+      <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Votre nom" required>
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+      <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="votre@email.com" required>
+    </div>
+  </div>
+  <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="+225 XX XX XX XX">
+  </div>
+  <div>
+    <label for="design-type" class="block text-sm font-medium text-gray-700 mb-1">Type de design souhaité</label>
+    <div class="relative">
+      <select id="design-type" name="design-type" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8" required>
+        <option value="" selected disabled>Sélectionnez une option</option>
+        <option value="logo">Logo & Identité visuelle</option>
+        <option value="print">Supports marketing imprimés</option>
+        <option value="digital">Design pour réseaux sociaux</option>
+        <option value="ui">UI/UX Design</option>
+        <option value="other">Autre / Projet complet</option>
+      </select>
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget estimé (FCFA)</label>
+    <div class="relative">
+      <select id="budget" name="budget" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8">
+        <option value="" selected disabled>Sélectionnez une option</option>
+        <option value="less-150k">Moins de 150 000</option>
+        <option value="150k-300k">150 000 - 300 000</option>
+        <option value="300k-500k">300 000 - 500 000</option>
+        <option value="more-500k">Plus de 500 000</option>
+        <option value="unknown">Je ne sais pas encore</option>
+      </select>
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Description du projet</label>
+    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Décrivez votre projet, vos objectifs et vos attentes..." required></textarea>
+  </div>
+  <div>
+    <label for="file" class="block text-sm font-medium text-gray-700 mb-1">Documents de référence (optionnel)</label>
+    <div class="border border-dashed border-gray-300 rounded p-4 text-center">
+      <i class="ri-upload-2-line text-gray-400 text-2xl mb-2"></i>
+      <p class="text-sm text-gray-500 mb-1">Glissez vos fichiers ici ou</p>
+      <button type="button" onclick="document.getElementById('file').click()" class="text-primary text-sm font-medium">parcourir vos fichiers</button>
+      <input type="file" id="file" name="file" class="hidden">
+    </div>
+  </div>
+  <div class="flex items-start">
+    <input type="checkbox" id="consent" name="consent" class="custom-checkbox mt-1" required>
+    <label for="consent" class="ml-2 text-sm text-gray-600">J'accepte que mes données soient traitées conformément à la politique de confidentialité de M-Tech Group.</label>
+  </div>
+  <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full md:w-auto">Envoyer ma demande</button>
+</form>
+</div>
+<div class="bg-white rounded-lg p-8 shadow-md">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Pourquoi choisir notre service de design ?</h3>
+<div class="space-y-6 mb-8">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-palette-line text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Créativité & originalité</h4>
+<p class="text-gray-600">Nous créons des designs uniques qui vous démarquent de la concurrence et captivent votre audience.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-focus-3-line text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Approche stratégique</h4>
+<p class="text-gray-600">Nous concevons des designs qui non seulement sont beaux, mais qui répondent à vos objectifs commerciaux.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-time-line text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Respect des délais</h4>
+<p class="text-gray-600">Nous livrons vos projets dans les temps, avec un processus transparent et une communication claire.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-customer-service-2-line text-red-500"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Support personnalisé</h4>
+<p class="text-gray-600">Nous vous accompagnons à chaque étape, de la conception à l'utilisation finale de vos designs.</p>
+</div>
+</div>
+</div>
+<div class="border-t pt-6">
+<h4 class="font-medium text-gray-900 mb-4">Contactez-nous directement</h4>
+<div class="space-y-3">
+<div class="flex items-center">
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-phone-line text-red-500"></i>
+</div>
+<span class="text-gray-700">+225 07 08 09 10</span>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-mail-line text-red-500"></i>
+</div>
+<span class="text-gray-700">contact@mtechgroup.ci</span>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-map-pin-line text-red-500"></i>
+</div>
+<span class="text-gray-700">Cocody Angré, 7ème Tranche, Abidjan</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 md:py-20 bg-primary">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Prêt à donner vie à votre vision ?</h2>
+<p class="text-lg text-white/90 max-w-3xl mx-auto mb-8">Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment notre expertise en design graphique peut transformer votre image de marque.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="#contact-form" class="bg-white text-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-100 transition-colors">Demander un devis</a>
+<a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/e8df6c54-fba7-4103-a03b-1880104ed884" data-readdy="true" class="bg-transparent text-white border border-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-white/10 transition-colors">Voir nos services web</a>
+</div>
+</div>
+</section>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/2250708091011" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors z-50">
+<i class="ri-whatsapp-line ri-xl"></i>
+</a>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<h3 class="text-xl font-['Pacifico'] text-white mb-6">M-Tech Group</h3>
+<p class="text-gray-400 mb-6">Votre partenaire de confiance pour toutes vos solutions numériques en Côte d'Ivoire. Expertise locale, service personnalisé et résultats garantis.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Liens rapides</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406#about" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406#services" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+<li><a href="#contact-form" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Nos services</h4>
+<ul class="space-y-3">
+<li><a href="service-creation.html" class="text-gray-400 hover:text-white transition-colors">Création de sites web</a></li>
+<li><a href="design-graphique.html" class="text-gray-400 hover:text-white transition-colors">Design graphique</a></li>
+<li><a href="assistance-informatique.html" class="text-gray-400 hover:text-white transition-colors">Assistance informatique</a></li>
+<li><a href="traitement-documents.html" class="text-gray-400 hover:text-white transition-colors">Traitement de documents</a></li>
+<li><a href="formation.html" class="text-gray-400 hover:text-white transition-colors">Formation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-map-pin-line"></i>
+</span>
+<span class="text-gray-400">Cocody Angré, 7ème Tranche, Abidjan, Côte d'Ivoire</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-phone-line"></i>
+</span>
+<span class="text-gray-400">+225 07 08 09 10</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-mail-line"></i>
+</span>
+<span class="text-gray-400">contact@mtechgroup.ci</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 M-Tech Group. Tous droits réservés.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-500 text-sm">Moyens de paiement acceptés:</span>
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-bank-card-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const menuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
+mobileMenu.innerHTML = `
+<div class="flex justify-between items-center p-4 border-b">
+<span class="text-2xl font-['Pacifico'] text-primary">M-Tech Group</span>
+<button class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<nav class="p-4">
+<ul class="space-y-4">
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406" data-readdy="true" class="block py-2 text-gray-800 font-medium">Accueil</a></li>
+<li>
+<div class="py-2 text-gray-800 font-medium flex justify-between items-center">
+Services
+<i class="ri-arrow-down-s-line"></i>
+</div>
+<ul class="pl-4 mt-2 space-y-2 hidden">
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/e8df6c54-fba7-4103-a03b-1880104ed884" data-readdy="true" class="block py-2 text-gray-700">Création de sites web</a></li>
+<li><a href="#" class="block py-2 text-primary font-medium">Design graphique</a></li>
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/190da472-cb4c-4ec9-b973-dc45db4b8191" data-readdy="true" class="block py-2 text-gray-700">Assistance informatique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Traitement de documents</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Formation</a></li>
+</ul>
+</li>
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406#about" data-readdy="true" class="block py-2 text-gray-800 font-medium">À propos</a></li>
+<li><a href="#contact-form" class="block py-2 text-gray-800 font-medium">Contact</a></li>
+</ul>
+</nav>
+<div class="p-4 mt-4">
+<a href="#contact-form" class="bg-primary text-white px-5 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full block text-center">Demander un devis</a>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-full');
+});
+mobileMenu.querySelector('button').addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+});
+// Services dropdown in mobile menu
+const serviceDropdown = mobileMenu.querySelector('.ri-arrow-down-s-line').parentNode;
+const serviceSubmenu = serviceDropdown.nextElementSibling;
+serviceDropdown.addEventListener('click', function() {
+serviceSubmenu.classList.toggle('hidden');
+});
+// Accordion functionality
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+accordionHeaders.forEach(header => {
+header.addEventListener('click', function() {
+const content = this.nextElementSibling;
+const icon = this.querySelector('.accordion-icon i');
+// Toggle active class
+content.classList.toggle('active');
+// Change icon
+if (content.classList.contains('active')) {
+icon.classList.remove('ri-add-line');
+icon.classList.add('ri-subtract-line');
+} else {
+icon.classList.remove('ri-subtract-line');
+icon.classList.add('ri-add-line');
+}
+});
+});
+// Portfolio filtering
+const filterButtons = document.querySelectorAll('.portfolio-filter');
+const portfolioItems = document.querySelectorAll('.portfolio-card');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => btn.classList.remove('active'));
+// Add active class to clicked button
+this.classList.add('active');
+const filter = this.getAttribute('data-filter');
+portfolioItems.forEach(item => {
+if (filter === 'all' || item.getAttribute('data-category') === filter) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+});
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+if (this.getAttribute('href') === '#') return;
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+mobileMenu.classList.add('translate-x-full');
+}
+});
+});
+});
+</script>
+
+
+</body>
+</html>

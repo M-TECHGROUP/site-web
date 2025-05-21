@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Création de sites web - M-Tech Group</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#ff9900'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=professional%2520web%2520development%2520workspace%2520with%2520clean%2520modern%2520design%252C%2520computer%2520screens%2520showing%2520website%2520mockups%2520and%2520code.%2520The%2520left%2520side%2520has%2520a%2520clean%2520gradient%2520blue%2520background%2520that%2520transitions%2520smoothly%2520to%2520the%2520right%2520side%2520image.%2520Professional%2520atmosphere%252C%2520soft%2520lighting%252C%2520web%2520design%2520tools%2520visible%252C%2520minimalist%2520workspace%2520with%2520high%2520quality%2520equipment&width=1920&height=800&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.portfolio-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+input:focus, textarea:focus, select:focus {
+outline: none;
+border-color: #e60000;
+}
+.dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 10;
+}
+.dropdown-container:hover .dropdown {
+display: block;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 18px;
+height: 18px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #e60000;
+border-color: #e60000;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 5px;
+top: 2px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.timeline-step:not(:last-child)::after {
+content: '';
+position: absolute;
+top: 24px;
+left: 100%;
+width: calc(100% - 48px);
+height: 2px;
+background-color: #e5e7eb;
+}
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.accordion-content.active {
+max-height: 500px;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-['Pacifico']">
+  <span class="text-red-500">M</span><span class="text-black">-Tech Group</span>
+</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="../index.html" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">Accueil</a>
+<div class="dropdown-container relative">
+<button class="text-primary font-medium flex items-center">
+Services
+<span class="ml-1 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</span>
+</button>
+<div class="dropdown bg-white shadow-lg rounded-md py-2 w-64">
+<a href="service-creation.html" class="block px-4 py-2 bg-gray-50 text-primary">Création de sites web</a>
+<a href="design-graphique.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Design graphique</a>
+<a href="assistance-informatique.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Assistance informatique</a>
+<a href="traitement-documents.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Traitement de documents</a>
+<a href="formation.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Formation</a>
+</div>
+</div>
+<a href="index.html#about" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">À propos</a>
+<a href="#contact-form" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+<a href="#contact-form" class="hidden md:inline-block bg-primary text-white px-5 py-2 text-white bg-red-500 hover:bg-red-600 rounded-full transition-colors">Demander un devis</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section pt-24 relative">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30"></div>
+<div class="container mx-auto px-4 py-20 md:py-32 relative z-10 w-full">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Création de Sites Web Professionnels</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">Nous concevons des sites web sur mesure qui allient esthétique, performance et fonctionnalité pour propulser votre entreprise dans l'univers numérique.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#contact-form"  class="bg-red-500 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center">Demander un devis</a>
+<a href="#portfolio" class="bg-white text-red-500 border border-red-500 px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors text-center">Voir nos réalisations</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Types de Sites Web -->
+<section id="types" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Types de Sites Web</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Nous développons différents types de sites web adaptés à vos besoins spécifiques et à vos objectifs commerciaux.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Site Vitrine -->
+<div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-store-2-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Site Vitrine</h3>
+<p class="text-gray-600 mb-5">Présentez votre entreprise, vos services ou produits avec un site élégant et professionnel. Idéal pour établir votre présence en ligne et attirer de nouveaux clients.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Design personnalisé à votre image</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Responsive (adapté mobile et tablette)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Optimisé pour le référencement (SEO)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Formulaire de contact intégré</span>
+</li>
+</ul>
+<a href="#contact-form" class="text-primary font-medium flex items-center hover:underline">
+Demander un devis
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</span>
+</a>
+</div>
+<!-- E-commerce -->
+<div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-shopping-cart-2-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Site E-commerce</h3>
+<p class="text-gray-600 mb-5">Vendez vos produits en ligne avec une boutique moderne et sécurisée. Nous créons des expériences d'achat fluides qui maximisent vos conversions.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Catalogue produits personnalisable</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Paiement sécurisé (cartes, mobile money)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Gestion des stocks et commandes</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Suivi client et statistiques de vente</span>
+</li>
+</ul>
+<a href="#contact-form" class="text-primary font-medium flex items-center hover:underline">
+Demander un devis
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</span>
+</a>
+</div>
+<!-- Application Web -->
+<div class="service-card bg-white rounded-lg shadow-md p-8 transition-all duration-300">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-apps-2-line ri-xl text-red-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Application Web</h3>
+<p class="text-gray-600 mb-5">Développez votre activité avec une application web sur mesure. Nous concevons des solutions interactives adaptées à vos processus métier spécifiques.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Fonctionnalités personnalisées</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Système d'authentification sécurisé</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Tableaux de bord et rapports</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-1">
+<i class="ri-check-line text-red-500 text-sm"></i>
+</div>
+<span class="text-gray-700">Intégration avec vos systèmes existants</span>
+</li>
+</ul>
+<a href="#contact-form" class="text-primary font-medium flex items-center hover:underline">
+Demander un devis
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Processus de Création -->
+<section id="process" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre Processus de Création</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Une approche méthodique et transparente pour transformer votre vision en réalité numérique.</p>
+</div>
+<div class="hidden md:flex justify-between items-start relative mb-16">
+<!-- Timeline desktop -->
+<div class="w-full flex justify-between">
+<!-- Step 1 -->
+<div class="timeline-step relative flex flex-col items-center w-1/6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">1</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Consultation</h4>
+<p class="text-sm text-gray-600 text-center">Échange initial pour comprendre vos besoins et objectifs</p>
+</div>
+<!-- Step 2 -->
+<div class="timeline-step relative flex flex-col items-center w-1/6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">2</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Analyse</h4>
+<p class="text-sm text-gray-600 text-center">Étude approfondie de vos besoins et de votre marché</p>
+</div>
+<!-- Step 3 -->
+<div class="timeline-step relative flex flex-col items-center w-1/6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">3</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Design</h4>
+<p class="text-sm text-gray-600 text-center">Création des maquettes et validation de l'interface</p>
+</div>
+<!-- Step 4 -->
+<div class="timeline-step relative flex flex-col items-center w-1/6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">4</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Développement</h4>
+<p class="text-sm text-gray-600 text-center">Programmation et intégration des fonctionnalités</p>
+</div>
+<!-- Step 5 -->
+<div class="timeline-step relative flex flex-col items-center w-1/6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">5</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Tests</h4>
+<p class="text-sm text-gray-600 text-center">Vérification et optimisation des performances</p>
+</div>
+<!-- Step 6 -->
+<div class="timeline-step relative flex flex-col items-center w-1/6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-4 z-10">
+<span class="font-semibold">6</span>
+</div>
+<h4 class="font-semibold text-gray-900 text-center mb-2">Lancement</h4>
+<p class="text-sm text-gray-600 text-center">Mise en ligne et formation à l'utilisation</p>
+</div>
+</div>
+</div>
+<!-- Timeline mobile -->
+<div class="md:hidden space-y-8">
+<!-- Step 1 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">1</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Consultation</h4>
+<p class="text-gray-600">Échange initial pour comprendre vos besoins et objectifs commerciaux.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/80 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">2</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Analyse</h4>
+<p class="text-gray-600">Étude approfondie de vos besoins, de votre marché et de votre concurrence.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/70 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">3</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Design</h4>
+<p class="text-gray-600">Création des maquettes et validation de l'interface utilisateur.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/60 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">4</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Développement</h4>
+<p class="text-gray-600">Programmation et intégration des fonctionnalités selon les spécifications.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/50 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">5</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Tests</h4>
+<p class="text-gray-600">Vérification et optimisation des performances et de la compatibilité.</p>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary/40 rounded-full flex items-center justify-center text-white mr-4 shrink-0">
+<span class="font-semibold">6</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Lancement</h4>
+<p class="text-gray-600">Mise en ligne et formation à l'utilisation de votre nouveau site.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#contact-form" class="bg-red-600 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors inline-block">Démarrer votre projet</a>
+</div>
+</div>
+</section>
+<!-- Portfolio -->
+<section id="portfolio" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Réalisations</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Découvrez quelques-uns de nos projets récents qui illustrent notre expertise en création de sites web.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Portfolio Item 1 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520elegant%2520restaurant%2520website%2520design%2520with%2520professional%2520food%2520photography%252C%2520clean%2520layout%252C%2520menu%2520display%252C%2520and%2520reservation%2520system.%2520The%2520website%2520has%2520a%2520sophisticated%2520appearance%2520with%2520high-quality%2520images%2520of%2520gourmet%2520dishes%2520and%2520elegant%2520restaurant%2520interior.%2520Professional%2520web%2520design%2520with%2520attention%2520to%2520typography%2520and%2520branding&width=600&height=400&seq=1&orientation=landscape" alt="Restaurant Le Gourmet" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Restaurant Le Gourmet</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Site Vitrine</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Site élégant avec réservation en ligne, présentation des menus et galerie photo pour un restaurant gastronomique à Abidjan.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le site
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 2 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520fashion%2520e-commerce%2520website%2520with%2520clean%2520design%252C%2520product%2520grid%2520layout%252C%2520shopping%2520cart%2520functionality%252C%2520and%2520mobile-responsive%2520design.%2520The%2520website%2520showcases%2520clothing%2520items%2520with%2520professional%2520photography%2520against%2520clean%2520backgrounds.%2520The%2520interface%2520is%2520minimal%2520and%2520elegant%2520with%2520clear%2520navigation%2520and%2520call-to-action%2520buttons&width=600&height=400&seq=2&orientation=landscape" alt="Élégance Mode" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Élégance Mode</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">E-commerce</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Boutique en ligne de vêtements et accessoires de mode avec paiement sécurisé et gestion des stocks intégrée.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le site
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 3 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520real%2520estate%2520website%2520design%2520with%2520property%2520listings%252C%2520search%2520functionality%252C%2520and%2520interactive%2520map.%2520The%2520website%2520features%2520high-quality%2520images%2520of%2520properties%252C%2520detailed%2520information%2520cards%252C%2520and%2520contact%2520forms.%2520The%2520design%2520is%2520clean%2520and%2520professional%2520with%2520a%2520focus%2520on%2520user%2520experience%2520and%2520property%2520showcase&width=600&height=400&seq=3&orientation=landscape" alt="Immobilier Premium" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Immobilier Premium</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Application Web</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Plateforme immobilière avec recherche avancée, gestion des annonces et système de mise en relation entre acheteurs et vendeurs.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le site
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 4 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520educational%2520platform%2520website%2520with%2520course%2520listings%252C%2520student%2520dashboard%252C%2520and%2520video%2520learning%2520interface.%2520The%2520design%2520is%2520clean%2520and%2520intuitive%2520with%2520clear%2520navigation%252C%2520progress%2520tracking%2520elements%252C%2520and%2520educational%2520content%2520organization.%2520Professional%2520e-learning%2520website%2520with%2520attention%2520to%2520user%2520experience%2520and%2520content%2520presentation&width=600&height=400&seq=4&orientation=landscape" alt="EduConnect" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">EduConnect</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Application Web</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Plateforme e-learning avec cours en ligne, suivi des progrès et certification pour une école de formation professionnelle.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le site
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 5 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520medical%2520clinic%2520website%2520design%2520with%2520appointment%2520booking%2520system%252C%2520doctor%2520profiles%252C%2520and%2520service%2520information.%2520The%2520website%2520has%2520a%2520clean%252C%2520trustworthy%2520appearance%2520with%2520medical%2520imagery%252C%2520clear%2520information%2520architecture%252C%2520and%2520patient-focused%2520design.%2520Healthcare%2520website%2520with%2520professional%2520photography%2520and%2520intuitive%2520navigation&width=600&height=400&seq=5&orientation=landscape" alt="Clinique Santé Plus" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Clinique Santé Plus</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">Site Vitrine</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Site médical avec prise de rendez-vous en ligne, présentation des services et des médecins pour une clinique privée.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le site
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+<!-- Portfolio Item 6 -->
+<div class="portfolio-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520online%2520pharmacy%2520e-commerce%2520website%2520with%2520product%2520categories%252C%2520search%2520functionality%252C%2520and%2520secure%2520checkout.%2520The%2520website%2520displays%2520pharmaceutical%2520products%2520with%2520clear%2520information%252C%2520dosage%2520details%252C%2520and%2520health%2520advice.%2520Professional%2520pharmacy%2520website%2520with%2520clean%2520design%252C%2520medical%2520imagery%252C%2520and%2520trust%2520indicators&width=600&height=400&seq=6&orientation=landscape" alt="Pharmacie En Ligne" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold text-gray-900">Pharmacie En Ligne</h3>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">E-commerce</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Boutique en ligne de produits pharmaceutiques avec livraison à domicile et consultation en ligne pour une pharmacie.</p>
+<a href="#" class="text-primary font-medium text-sm flex items-center hover:underline">
+Voir le site
+<span class="ml-2 w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#contact-form" class="bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors inline-block">Discuter de votre projet</a>
+</div>
+</div>
+</section>
+<!-- Technologies -->
+<section id="technologies" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technologies Utilisées</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Nous utilisons les technologies les plus récentes et les plus performantes pour créer des sites web modernes et efficaces.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Front-end -->
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+<span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-layout-2-line text-primary"></i>
+</span>
+Front-end
+</h3>
+<ul class="space-y-4">
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-html5-fill text-orange-500"></i>
+</div>
+<span class="text-gray-700">HTML5</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-css3-fill text-blue-500"></i>
+</div>
+<span class="text-gray-700">CSS3</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-javascript-fill text-yellow-500"></i>
+</div>
+<span class="text-gray-700">JavaScript</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-reactjs-line text-blue-400"></i>
+</div>
+<span class="text-gray-700">React</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-vuejs-line text-green-500"></i>
+</div>
+<span class="text-gray-700">Vue.js</span>
+</li>
+</ul>
+</div>
+<!-- Back-end -->
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+<span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-server-line text-primary"></i>
+</span>
+Back-end
+</h3>
+<ul class="space-y-4">
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-php-line text-purple-600"></i>
+</div>
+<span class="text-gray-700">PHP</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-nodejs-line text-green-600"></i>
+</div>
+<span class="text-gray-700">Node.js</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-database-2-line text-blue-600"></i>
+</div>
+<span class="text-gray-700">MySQL</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-database-2-line text-green-700"></i>
+</div>
+<span class="text-gray-700">MongoDB</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-server-line text-red-600"></i>
+</div>
+<span class="text-gray-700">Laravel</span>
+</li>
+</ul>
+</div>
+<!-- CMS -->
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+<span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-pages-line text-primary"></i>
+</span>
+CMS
+</h3>
+<ul class="space-y-4">
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-wordpress-fill text-blue-700"></i>
+</div>
+<span class="text-gray-700">WordPress</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-shopping-cart-2-line text-purple-500"></i>
+</div>
+<span class="text-gray-700">WooCommerce</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-shopping-bag-line text-orange-500"></i>
+</div>
+<span class="text-gray-700">PrestaShop</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-shopping-cart-line text-green-500"></i>
+</div>
+<span class="text-gray-700">Shopify</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-file-list-3-line text-blue-500"></i>
+</div>
+<span class="text-gray-700">Drupal</span>
+</li>
+</ul>
+</div>
+<!-- Outils -->
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+<span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-tools-line text-primary"></i>
+</span>
+Outils
+</h3>
+<ul class="space-y-4">
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-github-fill text-gray-800"></i>
+</div>
+<span class="text-gray-700">Git/GitHub</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-terminal-box-line text-gray-700"></i>
+</div>
+<span class="text-gray-700">Docker</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-search-line text-blue-600"></i>
+</div>
+<span class="text-gray-700">Google Analytics</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-speed-up-line text-green-600"></i>
+</div>
+<span class="text-gray-700">PageSpeed</span>
+</li>
+<li class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center mr-3">
+<i class="ri-secure-payment-line text-red-500"></i>
+</div>
+<span class="text-gray-700">SSL/Sécurité</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Tarifs -->
+<section id="pricing" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Tarifs</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Des solutions adaptées à tous les budgets avec un excellent rapport qualité-prix.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Forfait Essentiel -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6 border-b">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Essentiel</h3>
+<p class="text-gray-600 mb-6">Idéal pour les petites entreprises et les indépendants</p>
+<div class="flex items-end mb-4">
+<span class="text-4xl font-bold text-gray-900">250 000</span>
+<span class="text-gray-600 ml-2 mb-1">FCFA</span>
+</div>
+<p class="text-sm text-gray-500">Prix de départ</p>
+</div>
+<div class="p-6">
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Site vitrine jusqu'à 5 pages</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Design responsive (mobile, tablette)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Formulaire de contact</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Intégration réseaux sociaux</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Optimisation SEO de base</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-close-line text-gray-400 text-sm"></i>
+</div>
+<span class="text-gray-400">Système de gestion de contenu</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-close-line text-gray-400 text-sm"></i>
+</div>
+<span class="text-gray-400">Fonctionnalités e-commerce</span>
+</li>
+</ul>
+<a href="#contact-form" class="block text-center bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors w-full">Demander un devis</a>
+</div>
+</div>
+<!-- Forfait Professionnel -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden relative">
+<div class="absolute top-0 right-0">
+<div class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-bl-lg">Populaire</div>
+</div>
+<div class="p-6 border-b">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Professionnel</h3>
+<p class="text-gray-600 mb-6">Pour les entreprises en croissance</p>
+<div class="flex items-end mb-4">
+<span class="text-4xl font-bold text-gray-900">450 000</span>
+<span class="text-gray-600 ml-2 mb-1">FCFA</span>
+</div>
+<p class="text-sm text-gray-500">Prix de départ</p>
+</div>
+<div class="p-6">
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Site jusqu'à 10 pages</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Design premium responsive</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Système de gestion de contenu</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Optimisation SEO avancée</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Intégration Google Analytics</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Formation à l'utilisation</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-close-line text-gray-400 text-sm"></i>
+</div>
+<span class="text-gray-400">Fonctionnalités e-commerce complètes</span>
+</li>
+</ul>
+<a href="#contact-form" class="block text-center bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full">Demander un devis</a>
+</div>
+</div>
+<!-- Forfait Sur-mesure -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6 border-b">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Sur-mesure</h3>
+<p class="text-gray-600 mb-6">Solutions avancées pour besoins spécifiques</p>
+<div class="flex items-end mb-4">
+<span class="text-4xl font-bold text-gray-900">Sur mesure</span>
+</div>
+<p class="text-sm text-gray-500">Selon vos besoins</p>
+</div>
+<div class="p-6">
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Site e-commerce complet</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Application web personnalisée</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Intégration systèmes tiers</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Fonctionnalités avancées</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Optimisation performance</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Sécurité renforcée</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0 mt-0.5">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<span class="text-gray-700">Support et maintenance premium</span>
+</li>
+</ul>
+<a href="#contact-form" class="block text-center bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors w-full">Demander un devis</a>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-white rounded-lg shadow-md p-6 md:p-8">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Services additionnels</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-global-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Hébergement web</h4>
+<p class="text-sm text-gray-600">À partir de 50 000 FCFA/an</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-earth-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Nom de domaine</h4>
+<p class="text-sm text-gray-600">À partir de 15 000 FCFA/an</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-mail-send-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Emails professionnels</h4>
+<p class="text-sm text-gray-600">À partir de 30 000 FCFA/an</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-shield-check-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Certificat SSL</h4>
+<p class="text-sm text-gray-600">À partir de 25 000 FCFA/an</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-settings-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Maintenance</h4>
+<p class="text-sm text-gray-600">À partir de 35 000 FCFA/mois</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-search-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">SEO avancé</h4>
+<p class="text-sm text-gray-600">À partir de 150 000 FCFA</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section id="faq" class="py-16 md:py-24">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions Fréquentes</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Trouvez les réponses aux questions les plus courantes sur notre service de création de sites web.</p>
+</div>
+<div class="max-w-3xl mx-auto space-y-4">
+<!-- Question 1 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Combien de temps faut-il pour créer un site web ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Le délai de création dépend de la complexité du projet. En général :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Site vitrine simple : 2 à 4 semaines</li>
+<li>Site e-commerce : 4 à 8 semaines</li>
+<li>Application web sur mesure : 8 à 12 semaines ou plus</li>
+</ul>
+<p class="mt-2">Ces délais incluent les phases de conception, développement, tests et déploiement. Nous établissons un calendrier précis au début du projet.</p>
+</div>
+</div>
+</div>
+<!-- Question 2 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Quels sont les éléments nécessaires pour démarrer un projet ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Pour démarrer efficacement votre projet, nous avons besoin de :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Votre cahier des charges ou description détaillée du projet</li>
+<li>Votre logo et charte graphique (si disponibles)</li>
+<li>Contenu textuel et visuel pour le site</li>
+<li>Exemples de sites web que vous appréciez</li>
+<li>Informations sur votre cible et vos objectifs commerciaux</li>
+</ul>
+<p class="mt-2">Si vous n'avez pas tous ces éléments, nous pouvons vous accompagner dans leur élaboration.</p>
+</div>
+</div>
+</div>
+<!-- Question 3 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Comment se déroule le processus de paiement ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Notre processus de paiement est structuré comme suit :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Acompte de 40% à la signature du contrat pour démarrer le projet</li>
+<li>Second versement de 30% à la validation des maquettes</li>
+<li>Solde de 30% à la livraison finale du site</li>
+</ul>
+<p class="mt-2">Nous acceptons les paiements par virement bancaire, mobile money et espèces. Pour les projets de maintenance, nous proposons des forfaits mensuels ou annuels.</p>
+</div>
+</div>
+</div>
+<!-- Question 4 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Mon site sera-t-il optimisé pour les moteurs de recherche ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Oui, tous nos sites sont développés avec une optimisation SEO de base qui comprend :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Structure HTML sémantique et optimisée</li>
+<li>Temps de chargement optimisé</li>
+<li>Compatibilité mobile (responsive design)</li>
+<li>Méta-données optimisées (titres, descriptions)</li>
+<li>URLs propres et structurées</li>
+</ul>
+<p class="mt-2">Pour un référencement plus avancé, nous proposons des services SEO complémentaires incluant l'optimisation du contenu, la stratégie de mots-clés et le suivi des performances.</p>
+</div>
+</div>
+</div>
+<!-- Question 5 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+<span class="font-medium text-gray-900">Proposez-vous des services de maintenance après la mise en ligne ?</span>
+<span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+<i class="ri-add-line"></i>
+</span>
+</button>
+<div class="accordion-content px-5 bg-gray-50">
+<div class="py-4 text-gray-600">
+<p>Oui, nous proposons plusieurs formules de maintenance :</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Maintenance technique (mises à jour de sécurité, sauvegardes)</li>
+<li>Maintenance évolutive (ajout de fonctionnalités, améliorations)</li>
+<li>Maintenance éditoriale (mise à jour de contenu)</li>
+</ul>
+<p class="mt-2">Nos contrats de maintenance sont flexibles et peuvent être adaptés à vos besoins spécifiques. Ils garantissent la pérennité et la sécurité de votre site web.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section id="contact-form" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Discutons de votre projet</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Contactez-nous pour discuter de vos besoins en création de site web et obtenir un devis personnalisé.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<form class="space-y-6" action="sendmail.php" method="POST" enctype="multipart/form-data">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+      <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Votre nom" required>
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+      <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="votre@email.com" required>
+    </div>
+  </div>
+  <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="+225 XX XX XX XX">
+  </div>
+  <div>
+    <label for="website-type" class="block text-sm font-medium text-gray-700 mb-1">Type de site souhaité</label>
+    <div class="relative">
+      <select id="website-type" name="website-type" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8" required>
+        <option value="" selected disabled>Sélectionnez une option</option>
+        <option value="vitrine">Site vitrine</option>
+        <option value="ecommerce">Site e-commerce</option>
+        <option value="application">Application web</option>
+        <option value="other">Autre / Je ne sais pas encore</option>
+      </select>
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget estimé (FCFA)</label>
+    <div class="relative">
+      <select id="budget" name="budget" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8">
+        <option value="" selected disabled>Sélectionnez une option</option>
+        <option value="less-250k">Moins de 250 000</option>
+        <option value="250k-500k">250 000 - 500 000</option>
+        <option value="500k-1m">500 000 - 1 000 000</option>
+        <option value="more-1m">Plus de 1 000 000</option>
+        <option value="unknown">Je ne sais pas encore</option>
+      </select>
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Description du projet</label>
+    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Décrivez votre projet, vos objectifs et vos attentes..." required></textarea>
+  </div>
+  <div>
+    <label for="file" class="block text-sm font-medium text-gray-700 mb-1">Documents complémentaires (optionnel)</label>
+    <div class="border border-dashed border-gray-300 rounded p-4 text-center">
+      <i class="ri-upload-2-line text-gray-400 text-2xl mb-2"></i>
+      <p class="text-sm text-gray-500 mb-1">Glissez vos fichiers ici ou</p>
+      <button type="button" onclick="document.getElementById('file').click()" class="text-primary text-sm font-medium">parcourir vos fichiers</button>
+      <input type="file" id="file" name="file" class="hidden">
+    </div>
+  </div>
+  <div class="flex items-start">
+    <input type="checkbox" id="consent" name="consent" class="custom-checkbox mt-1" required>
+    <label for="consent" class="ml-2 text-sm text-gray-600">J'accepte que mes données soient traitées conformément à la politique de confidentialité de M-Tech Group.</label>
+  </div>
+  <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full md:w-auto">Envoyer ma demande</button>
+</form>
+</div>
+<div class="bg-white rounded-lg p-8 shadow-md">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Pourquoi choisir M-Tech Group ?</h3>
+<div class="space-y-6 mb-8">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-user-star-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Expertise locale</h4>
+<p class="text-gray-600">Notre équipe comprend les spécificités du marché ivoirien et adapte votre site en conséquence.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-palette-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Design sur mesure</h4>
+<p class="text-gray-600">Chaque site est unique et conçu spécifiquement pour refléter votre identité et répondre à vos objectifs.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-smartphone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">100% responsive</h4>
+<p class="text-gray-600">Tous nos sites s'adaptent parfaitement à tous les appareils : ordinateurs, tablettes et smartphones.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+<i class="ri-customer-service-2-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Support continu</h4>
+<p class="text-gray-600">Nous vous accompagnons avant, pendant et après la mise en ligne de votre site web.</p>
+</div>
+</div>
+</div>
+<div class="border-t pt-6">
+<h4 class="font-medium text-gray-900 mb-4">Contactez-nous directement</h4>
+<div class="space-y-3">
+<div class="flex items-center">
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-700">+225 07 08 09 10</span>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-700">contact@mtechgroup.ci</span>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-700">Cocody Angré, 7ème Tranche, Abidjan</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 md:py-20 bg-primary">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Prêt à lancer votre projet web ?</h2>
+<p class="text-lg text-white/90 max-w-3xl mx-auto mb-8">Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment M-Tech Group peut vous aider à créer un site web qui se démarque.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="#contact-form" class="bg-white text-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-100 transition-colors">Demander un devis</a>
+<a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406" data-readdy="true" class="bg-transparent text-white border border-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-white/10 transition-colors">Retour à l'accueil</a>
+</div>
+</div>
+</section>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/2250708091011" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors z-50">
+<i class="ri-whatsapp-line ri-xl"></i>
+</a>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<h3 class="text-xl font-['Pacifico'] text-white mb-6">M-Tech Group</h3>
+<p class="text-gray-400 mb-6">Votre partenaire de confiance pour toutes vos solutions numériques en Côte d'Ivoire. Expertise locale, service personnalisé et résultats garantis.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Liens rapides</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406#about" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406#services" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+<li><a href="#contact-form" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Nos services</h4>
+<ul class="space-y-3">
+<li><a href="service-creation.html" class="text-gray-400 hover:text-white transition-colors">Création de sites web</a></li>
+<li><a href="design-graphique.html" class="text-gray-400 hover:text-white transition-colors">Design graphique</a></li>
+<li><a href="assistance-informatique.html" class="text-gray-400 hover:text-white transition-colors">Assistance informatique</a></li>
+<li><a href="traitement-documents.html" class="text-gray-400 hover:text-white transition-colors">Traitement de documents</a></li>
+<li><a href="formation.html" class="text-gray-400 hover:text-white transition-colors">Formation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-map-pin-line"></i>
+</span>
+<span class="text-gray-400">Cocody Angré, 7ème Tranche, Abidjan, Côte d'Ivoire</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-phone-line"></i>
+</span>
+<span class="text-gray-400">+225 07 08 09 10</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-mail-line"></i>
+</span>
+<span class="text-gray-400">contact@mtechgroup.ci</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 M-Tech Group. Tous droits réservés.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-500 text-sm">Moyens de paiement acceptés:</span>
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-bank-card-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const menuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
+mobileMenu.innerHTML = `
+<div class="flex justify-between items-center p-4 border-b">
+<span class="text-2xl font-['Pacifico'] text-primary">M-Tech Group</span>
+<button class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<nav class="p-4">
+<ul class="space-y-4">
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406" data-readdy="true" class="block py-2 text-gray-800 font-medium">Accueil</a></li>
+<li>
+<div class="py-2 text-gray-800 font-medium flex justify-between items-center">
+Services
+<i class="ri-arrow-down-s-line"></i>
+</div>
+<ul class="pl-4 mt-2 space-y-2 hidden">
+<li><a href="#" class="block py-2 text-primary font-medium">Création de sites web</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Design graphique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Assistance informatique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Traitement de documents</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Formation</a></li>
+</ul>
+</li>
+<li><a href="https://readdy.ai/home/95aade4d-f81f-46cc-8774-7024a8cbaf06/616a03bf-32ec-46ca-96d0-33fff8a3b406#about" data-readdy="true" class="block py-2 text-gray-800 font-medium">À propos</a></li>
+<li><a href="#contact-form" class="block py-2 text-gray-800 font-medium">Contact</a></li>
+</ul>
+</nav>
+<div class="p-4 mt-4">
+<a href="#contact-form" class="bg-primary text-white px-5 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full block text-center">Demander un devis</a>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-full');
+});
+mobileMenu.querySelector('button').addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+});
+// Services dropdown in mobile menu
+const serviceDropdown = mobileMenu.querySelector('.ri-arrow-down-s-line').parentNode;
+const serviceSubmenu = serviceDropdown.nextElementSibling;
+serviceDropdown.addEventListener('click', function() {
+serviceSubmenu.classList.toggle('hidden');
+});
+// Accordion functionality
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+accordionHeaders.forEach(header => {
+header.addEventListener('click', function() {
+const content = this.nextElementSibling;
+const icon = this.querySelector('.accordion-icon i');
+// Toggle active class
+content.classList.toggle('active');
+// Change icon
+if (content.classList.contains('active')) {
+icon.classList.remove('ri-add-line');
+icon.classList.add('ri-subtract-line');
+} else {
+icon.classList.remove('ri-subtract-line');
+icon.classList.add('ri-add-line');
+}
+});
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+if (this.getAttribute('href') === '#') return;
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+mobileMenu.classList.add('translate-x-full');
+}
+});
+});
+});
+</script>
+</body>
+</html>

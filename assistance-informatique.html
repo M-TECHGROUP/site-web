@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>assistance-informatique - M-Tech Group</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#ff9900'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+background-image: url(ass.jpg);
+background-size: cover;
+background-position: center;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.portfolio-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+input:focus, textarea:focus, select:focus {
+outline: none;
+border-color: #e60000;
+}
+.dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 10;
+}
+.dropdown-container:hover .dropdown {
+display: block;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 18px;
+height: 18px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #e60000;
+border-color: #e60000;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 5px;
+top: 2px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.timeline-step:not(:last-child)::after {
+content: '';
+position: absolute;
+top: 24px;
+left: 100%;
+width: calc(100% - 48px);
+height: 2px;
+background-color: #e5e7eb;
+}
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.accordion-content.active {
+max-height: 500px;
+}
+.portfolio-filter.active {
+background-color: #e60000;
+color: white;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-['Pacifico']">
+  <span class="text-red-500">M</span><span class="text-black">-Tech Group</span>
+</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="index.html" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">Accueil</a>
+<div class="dropdown-container relative">
+<button class="text-primary font-medium flex items-center">
+Services
+<span class="ml-1 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</span>
+</button>
+<div class="dropdown bg-white shadow-lg rounded-md py-2 w-64">
+<a href="service-creation.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Création de sites web</a>
+<a href="design-graphique.html" data-readdy="true" class="block px-4 py-2 bg-gray-50 text-primary">Design graphique</a>
+<a href="assistance-informatique.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Assistance informatique</a>
+<a href="traitement-documents.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Traitement de documents</a>
+<a href="formation.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Formation</a>
+</div>
+</div>
+<a href="index.html#about" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">À propos</a>
+<a href="#contact-form" data-readdy="true" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+<a href="#contact-form" class="hidden md:inline-block bg-red-600 text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-red-600 transition-colors">Demander un devis</a>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section pt-24 relative">
+  <div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30"></div>
+  <div class="container mx-auto px-4 py-20 relative z-10 w-full">
+    <div class="max-w-2xl">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Assistance Informatique</h1>
+      <p class="text-lg text-gray-700 mb-8">
+        Un support technique professionnel pour tous vos besoins informatiques — sur site ou à distance.
+      </p>
+      <a href="#contact-form" class="bg-red-600 text-white px-6 py-3 rounded-md font-medium hover:bg-red-700 transition">
+        Demander un devis
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos Services d’Assistance</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Interventions rapides et solutions efficaces pour garantir la continuité de votre activité.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="service-card bg-white rounded-lg p-6 shadow transition duration-300">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-computer-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Dépannage Matériel</h3>
+        <p class="text-gray-600">Diagnostic et réparation de vos ordinateurs, imprimantes, onduleurs et périphériques.</p>
+      </div>
+      <div class="service-card bg-white rounded-lg p-6 shadow transition duration-300">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-settings-4-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Maintenance Préventive</h3>
+        <p class="text-gray-600">Nettoyage, mise à jour, optimisation et prévention des pannes pour un parc sain et performant.</p>
+      </div>
+      <div class="service-card bg-white rounded-lg p-6 shadow transition duration-300">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-download-cloud-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Installation Logicielle</h3>
+        <p class="text-gray-600">Installation de systèmes d’exploitation, antivirus, logiciels métiers et configurations sur mesure.</p>
+      </div>
+      <div class="service-card bg-white rounded-lg p-6 shadow transition duration-300">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-shield-check-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Sécurité Informatique</h3>
+        <p class="text-gray-600">Protection de vos données contre les menaces numériques avec des solutions de sécurité fiables.</p>
+      </div>
+      <div class="service-card bg-white rounded-lg p-6 shadow transition duration-300">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-remote-control-2-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Assistance à Distance</h3>
+        <p class="text-gray-600">Intervention rapide à distance via des outils sécurisés pour résoudre vos problèmes en quelques clics.</p>
+      </div>
+      <div class="service-card bg-white rounded-lg p-6 shadow transition duration-300">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-user-settings-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Conseil & Audit</h3>
+        <p class="text-gray-600">Accompagnement technique et recommandations personnalisées pour vos projets informatiques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Portfolio Assistance Informatique -->
+<section id="portfolio" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos Réalisations</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Quelques exemples d’interventions récentes réalisées avec succès par notre équipe technique.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Projet 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="reso.png" class="w-full h-48 object-cover" alt="Réparation PC entreprise">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Réparation réseau – PME</h3>
+          <p class="text-sm text-gray-600 mb-4">Diagnostic complet et remise en service du réseau d’une entreprise à Abidjan.</p>
+          <a href="#contact-form" class="text-primary font-medium text-sm hover:underline flex items-center">
+            Voir plus <i class="ri-arrow-right-line ml-2 text-red-500"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="logy.jpg" class="w-full h-48 object-cover" alt="Installation logiciel">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Installation logiciels – Cabinet médical</h3>
+          <p class="text-sm text-gray-600 mb-4">Mise en place de logiciels de gestion et de sécurité informatique dans une clinique privée.</p>
+          <a href="#contact-form" class="text-primary font-medium text-sm hover:underline flex items-center">
+            Voir plus <i class="ri-arrow-right-line ml-2 text-red-500"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="secu.jpg" class="w-full h-48 object-cover" alt="Sécurisation de données">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">Sécurisation – Données sensibles</h3>
+          <p class="text-sm text-gray-600 mb-4">Audit et mise en place d’un pare-feu et d’un système antivirus dans un cabinet juridique.</p>
+          <a href="#contact-form" class="text-primary font-medium text-sm hover:underline flex items-center">
+            Voir plus <i class="ri-arrow-right-line ml-2 text-red-500"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ Assistance Informatique -->
+<section id="faq" class="py-16 md:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions Fréquentes</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Voici les réponses aux questions les plus courantes sur notre service d’assistance informatique.</p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto space-y-4">
+      
+      <!-- Question 1 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Intervenez-vous à domicile ou uniquement à distance ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+            <i class="ri-add-line"></i>
+          </span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Oui, nous proposons les deux : assistance à distance via des outils sécurisés, ou déplacement sur site (domicile, bureau, entreprise) selon votre besoin et votre localisation.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Quels types de problèmes informatiques pouvez-vous résoudre ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+            <i class="ri-add-line"></i>
+          </span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Nous gérons la plupart des incidents techniques : pannes matérielles, virus, lenteurs, perte de fichiers, installation de logiciels, configuration réseau, imprimantes, Wi-Fi, etc.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Combien coûte une intervention ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+            <i class="ri-add-line"></i>
+          </span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Les tarifs varient selon la nature du problème, le mode d’intervention (distance ou sur site) et la durée. Nous vous envoyons toujours un devis avant toute action.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Mes données sont-elles en sécurité ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+            <i class="ri-add-line"></i>
+          </span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Absolument. Nous signons une clause de confidentialité si besoin. Aucune donnée ne sera copiée, exploitée ou conservée sans votre autorisation.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Quel est le délai d’intervention ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon">
+            <i class="ri-add-line"></i>
+          </span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Nous intervenons généralement le jour même ou sous 24h après votre demande. Pour les urgences, contactez-nous directement par téléphone ou WhatsApp.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact-form" class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Discutons de votre projet</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Contactez-nous pour discuter de vos besoins en assistance informatique et obtenir un devis personnalisé.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Formulaire de contact -->
+      <div>
+        <form class="space-y-6 bg-white rounded-lg shadow-md p-8" action="sendmail.php" method="POST" enctype="multipart/form-data">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+      <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Votre nom" required>
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+      <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="votre@email.com" required>
+    </div>
+  </div>
+  <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="+225 XX XX XX XX">
+  </div>
+  <div>
+    <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Type d'assistance souhaité</label>
+    <div class="relative">
+      <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8" required>
+        <option value="" selected disabled>Sélectionnez une option</option>
+        <option value="depannage">Dépannage Matériel</option>
+        <option value="maintenance">Maintenance Préventive</option>
+        <option value="installation">Installation Logicielle</option>
+        <option value="securite">Sécurité Informatique</option>
+        <option value="audit">Conseil & Audit</option>
+      </select>
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget estimé (FCFA)</label>
+    <div class="relative">
+      <select id="budget" name="budget" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8">
+        <option value="" selected disabled>Sélectionnez une option</option>
+        <option value="moins-25000">Moins de 25 000</option>
+        <option value="25000-50000">25 000 - 50 000</option>
+        <option value="50000-100000">50 000 - 100 000</option>
+        <option value="plus-100000">Plus de 100 000</option>
+        <option value="unknown">Je ne sais pas encore</option>
+      </select>
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Description du besoin</label>
+    <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20" placeholder="Décrivez votre problème ou projet..." required></textarea>
+  </div>
+  <div>
+    <label for="file" class="block text-sm font-medium text-gray-700 mb-1">Documents de référence (optionnel)</label>
+    <div class="border border-dashed border-gray-300 rounded p-4 text-center">
+      <i class="ri-upload-2-line text-gray-400 text-2xl mb-2"></i>
+      <p class="text-sm text-gray-500 mb-1">Glissez vos fichiers ici ou</p>
+      <button type="button" onclick="document.getElementById('file').click()" class="text-primary text-sm font-medium">parcourir vos fichiers</button>
+      <input type="file" id="file" name="file" class="hidden">
+    </div>
+  </div>
+  <div class="flex items-start">
+    <input type="checkbox" id="consent" name="consent" class="custom-checkbox mt-1" required>
+    <label for="consent" class="ml-2 text-sm text-gray-600">J'accepte que mes données soient traitées conformément à la politique de confidentialité de M-Tech Group.</label>
+  </div>
+  <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full md:w-auto">Envoyer ma demande</button>
+</form>
+      </div>
+      <!-- Bloc arguments commerciaux -->
+      <div class="bg-white rounded-lg p-8 shadow-md">
+        <h3 class="text-xl font-semibold text-gray-900 mb-6">Pourquoi choisir notre service assistance-informatique&nbsp;?</h3>
+        <div class="space-y-6 mb-8">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+              <i class="ri-tools-line text-red-500"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900">Interventions rapides</h4>
+              <p class="text-gray-600">Nous intervenons rapidement pour résoudre vos problèmes informatiques et minimiser les temps d'arrêt.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+              <i class="ri-shield-check-line text-red-500"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900">Sécurité et fiabilité</h4>
+              <p class="text-gray-600">Nous mettons en place des solutions de sécurité robustes pour protéger vos données et garantir la continuité de votre activité.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+              <i class="ri-customer-service-2-line text-red-500"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900">Assistance personnalisée</h4>
+              <p class="text-gray-600">Un technicien vous est dédié pour un suivi clair, professionnel et humain.</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+              <i class="ri-macbook-line text-red-500"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900">Expertise matérielle & logicielle</h4>
+              <p class="text-gray-600">Nous maîtrisons les systèmes Windows, Linux, les outils bureautiques, les imprimantes et plus encore.</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t pt-6">
+          <h4 class="font-medium text-gray-900 mb-4">Contactez-nous directement</h4>
+          <div class="space-y-3">
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+                <i class="ri-phone-line text-red-500"></i>
+              </div>
+              <span class="text-gray-700">+225 07 08 09 10</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+                <i class="ri-mail-line text-red-500"></i>
+              </div>
+              <span class="text-gray-700">contact@mtechgroup.ci</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3 shrink-0">
+                <i class="ri-map-pin-line text-red-500"></i>
+              </div>
+              <span class="text-gray-700">Cocody Angré, 7ème Tranche, Abidjan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Bouton WhatsApp -->
+<a href="https://wa.me/2250708091011" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors z-50">
+  <i class="ri-whatsapp-line ri-xl"></i>
+</a>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<h3 class="text-xl font-['Pacifico'] text-white mb-6">M-Tech Group</h3>
+<p class="text-gray-400 mb-6">Votre partenaire de confiance pour toutes vos solutions numériques en Côte d'Ivoire. Expertise locale, service personnalisé et résultats garantis.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Liens rapides</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Nos services</h4>
+<ul class="space-y-3">
+<li><a href="service-creation.html" class="text-gray-400 hover:text-white transition-colors">Création de sites web</a></li>
+<li><a href="design-graphique.html" class="text-gray-400 hover:text-white transition-colors">Design graphique</a></li>
+<li><a href="assistance-informatique.html" class="text-gray-400 hover:text-white transition-colors">Assistance informatique</a></li>
+<li><a href="traitement-documents.html" class="text-gray-400 hover:text-white transition-colors">Traitement de documents</a></li>
+<li><a href="formation.html" class="text-gray-400 hover:text-white transition-colors">Formation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-map-pin-line"></i>
+</span>
+<span class="text-gray-400">Cocody Angré, 7ème Tranche, Abidjan, Côte d'Ivoire</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-phone-line"></i>
+</span>
+<span class="text-gray-400">+225 07 08 09 10</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-mail-line"></i>
+</span>
+<span class="text-gray-400">contact@mtechgroup.ci</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 M-Tech Group. Tous droits réservés.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-500 text-sm">Moyens de paiement acceptés:</span>
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-bank-card-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu 
+const menuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
+mobileMenu.innerHTML = `
+<div class="flex justify-between items-center p-4 border-b">
+<span class="text-2xl font-['Pacifico'] text-primary">M-Tech Group</span>
+<button class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<nav class="p-4">
+<ul class="space-y-4">
+<li><a href="#" class="block py-2 text-gray-800 font-medium">Accueil</a></li>
+<li>
+<div class="py-2 text-gray-800 font-medium flex justify-between items-center">
+Services
+<i class="ri-arrow-down-s-line"></i>
+</div>
+<ul class="pl-4 mt-2 space-y-2 hidden">
+<li><a href="#" class="block py-2 text-gray-700">Création de sites web</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Design graphique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Assistance informatique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Traitement de documents</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Formation</a></li>
+</ul>
+</li>
+<li><a href="#about" class="block py-2 text-gray-800 font-medium">À propos</a></li>
+<li><a href="#contact" class="block py-2 text-gray-800 font-medium">Contact</a></li>
+</ul>
+</nav>
+<div class="p-4 mt-4">
+<a href="#contact" class="bg-primary text-white px-5 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full block text-center">Demander un devis</a>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-full');
+});
+mobileMenu.querySelector('button').addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+});
+// Services dropdown in mobile menu
+const serviceDropdown = mobileMenu.querySelector('.ri-arrow-down-s-line').parentNode;
+const serviceSubmenu = serviceDropdown.nextElementSibling;
+serviceDropdown.addEventListener('click', function() {
+serviceSubmenu.classList.toggle('hidden');
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+if (this.getAttribute('href') === '#') return;
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+mobileMenu.classList.add('translate-x-full');
+}
+});
+});
+});
+</script>
+
+<script>
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon i');
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.classList.remove('ri-subtract-line');
+        icon.classList.add('ri-add-line');
+      } else {
+        // Fermer les autres
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+        document.querySelectorAll('.accordion-icon i').forEach(i => {
+          i.classList.remove('ri-subtract-line');
+          i.classList.add('ri-add-line');
+        });
+
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.classList.remove('ri-add-line');
+        icon.classList.add('ri-subtract-line');
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

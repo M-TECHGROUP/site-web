@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Traitement de Documents - M-Tech Group</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#ff9900'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+background-image: url(doc.jpg);
+background-size: cover;
+background-position: center;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.testimonial-card {
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: scale(1.02);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #e60000;
+}
+.dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 10;
+}
+.dropdown-container:hover .dropdown {
+display: block;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 18px;
+height: 18px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #e60000;
+border-color: #e60000;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 5px;
+top: 2px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<style>
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+</style>
+
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="index.html" class="text-2xl font-['Pacifico']">
+  <span class="text-red-500">M</span><span class="text-black">-Tech Group</span>
+</a>
+
+<nav class="hidden md:flex items-center space-x-8">
+<a href="index.html" class="text-gray-800 font-medium hover:text-primary transition-colors">Accueil</a>
+<div class="dropdown-container relative">
+<button class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center">
+Services
+<span class="ml-1 w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</span>
+</button>
+<div class="dropdown bg-white shadow-lg rounded-md py-2 w-64">
+<a href="service-creation.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Création de sites web</a>
+<a href="design-graphique.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Design graphique</a>
+<a href="assistance-informatique.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Assistance informatique</a>
+<a href="trait-doc.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Traitement de documents</a>
+<a href="formation.html" data-readdy="true" class="block px-4 py-2 hover:bg-gray-50 text-gray-700">Formation</a>
+</div>
+</div>
+<a href="#about" class="text-gray-800 font-medium hover:text-primary transition-colors">À propos</a>
+<a href="#contact" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+<a href="#contact" class="hidden md:inline-block bg-primary text-white px-5 py-2 text-white bg-red-500 hover:bg-red-600 rounded-full transition-colors">Demander un devis</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section pt-24 relative">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30"></div>
+<div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Traitement de Documents</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">Externalisez vos tâches de saisie, transcription, mise en page et archivage auprès de notre équipe fiable et rapide</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#contact" class="bg-red-500 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-red-600 transition-colors text-center">Demander un devis</a>
+<a href="#services" class="bg-white text-red-500 border border-red-500 px-6 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-gray-50 transition-colors text-center">Découvrir nos services</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Services -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos Prestations</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Des solutions professionnelles pour gérer efficacement vos documents physiques et numériques.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-keyboard-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Saisie de données</h3>
+        <p class="text-gray-600">Traitement rapide de formulaires, enquêtes, rapports et manuscrits.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-file-search-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Numérisation & OCR</h3>
+        <p class="text-gray-600">Transformation de documents papier en fichiers éditables et consultables.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="text-4xl text-red-500 mb-4"><i class="ri-pages-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Mise en page & formatage</h3>
+        <p class="text-gray-600">Mise aux normes de vos rapports, CV, livres, brochures et autres fichiers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Quelques Réalisations</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Voici un aperçu de travaux réalisés pour nos clients en Côte d’Ivoire.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="sai.jpg" class="w-full h-auto object-contain" alt="Saisie">
+        <div class="p-6">
+          <h3 class="font-semibold text-gray-900">Rapports Ministériels</h3>
+          <p class="text-sm text-gray-600">Saisie et mise en page de 300 pages pour un projet gouvernemental.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="num.jpg" class="w-full h-auto object-contain" alt="Numérisation">
+        <div class="p-6">
+          <h3 class="font-semibold text-gray-900">Archives d’entreprise</h3>
+          <p class="text-sm text-gray-600">Numérisation et indexation de 1 000 dossiers physiques.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="cvr.png" class="w-full h-auto object-contain" alt="Mise en forme">
+        <div class="p-6">
+          <h3 class="font-semibold text-gray-900">CV & Rapports</h3>
+          <p class="text-sm text-gray-600">Relecture, corrections et alignement professionnel des formats Word et PDF.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pourquoi nous choisir -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="bg-white rounded-lg p-8 shadow-md max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl font-semibold text-gray-900 mb-10">Pourquoi choisir notre service de traitement de documents ?</h3>
+      <div class="space-y-10">
+        
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+            <i class="ri-speed-up-line text-red-500 text-2xl"></i>
+          </div>
+          <h4 class="font-medium text-gray-900">Gain de temps</h4>
+          <p class="text-gray-600 max-w-md mx-auto">Déléguez vos tâches répétitives pour vous concentrer sur l’essentiel.</p>
+        </div>
+        
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+            <i class="ri-shield-check-line text-red-500 text-2xl"></i>
+          </div>
+          <h4 class="font-medium text-gray-900">Confidentialité garantie</h4>
+          <p class="text-gray-600 max-w-md mx-auto">Vos documents sont traités avec sécurité et discrétion.</p>
+        </div>
+        
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+            <i class="ri-user-settings-line text-red-500 text-2xl"></i>
+          </div>
+          <h4 class="font-medium text-gray-900">Service sur mesure</h4>
+          <p class="text-gray-600 max-w-md mx-auto">Nous adaptons notre méthode à votre activité et vos exigences.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FAQ Traitement de documents -->
+<section id="faq" class="py-16 md:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions Fréquentes</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Trouvez les réponses aux questions les plus courantes sur nos services de traitement documentaire.</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+
+      <!-- Question 1 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Quels types de documents traitez-vous ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon"><i class="ri-add-line"></i></span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Nous traitons tout type de document : manuscrits, rapports, mémoires, factures, contrats, formulaires, archives papier, CV, brochures, documents juridiques, etc.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Quels formats de fichiers livrez-vous ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon"><i class="ri-add-line"></i></span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Nous livrons en formats Word (.docx), PDF, Excel, PowerPoint ou autres selon votre besoin. Pour les documents numérisés, nous pouvons aussi fournir les fichiers en image (JPG, PNG) ou en version OCR.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Mes données sont-elles confidentielles ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon"><i class="ri-add-line"></i></span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Oui. Tous les documents sont traités avec la plus grande confidentialité. Nous pouvons signer un accord de confidentialité si nécessaire. Aucune information n’est partagée ni utilisée sans votre autorisation.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Quel est le délai de traitement ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon"><i class="ri-add-line"></i></span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Le délai dépend du volume et de la complexité du travail. En général, les petits documents sont livrés sous 24h, les projets plus volumineux entre 48h et 5 jours. Nous fournissons toujours un délai estimatif au moment du devis.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="accordion-header w-full flex justify-between items-center p-5 bg-white text-left">
+          <span class="font-medium text-gray-900">Puis-je envoyer mes documents par email ou WhatsApp ?</span>
+          <span class="w-6 h-6 flex items-center justify-center text-gray-500 accordion-icon"><i class="ri-add-line"></i></span>
+        </button>
+        <div class="accordion-content px-5 bg-gray-50">
+          <div class="py-4 text-gray-600">
+            Oui. Vous pouvez nous envoyer vos documents scannés ou photographiés par email, WhatsApp ou via notre formulaire en ligne. Nous nous chargeons du reste.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Formulaire de contact -->
+<section id="contact-form" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold mb-4">Demander un Devis</h2>
+      <p class="text-gray-600 max-w-xl mx-auto">Expliquez-nous vos besoins et recevez une proposition dans les plus brefs délais.</p>
+    </div>
+    <form class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow space-y-6" action="sendmail.php" method="POST" enctype="multipart/form-data">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+      <input type="text" id="name" name="name" class="w-full border p-3 rounded focus:ring-2 focus:ring-primary/20" placeholder="Votre nom" required>
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+      <input type="email" id="email" name="email" class="w-full border p-3 rounded focus:ring-2 focus:ring-primary/20" placeholder="votre@email.com" required>
+    </div>
+  </div>
+  <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+    <input type="tel" id="phone" name="phone" class="w-full border p-3 rounded focus:ring-2 focus:ring-primary/20" placeholder="+225 XX XX XX XX" required>
+  </div>
+  <div>
+    <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Type de prestation</label>
+    <div class="relative">
+      <select id="service" name="service" class="w-full border p-3 rounded appearance-none focus:ring-2 focus:ring-primary/20 pr-8" required>
+        <option value="" selected disabled>Sélectionnez une option</option>
+        <option value="saisie">Saisie de données</option>
+        <option value="numerisation">Numérisation & OCR</option>
+        <option value="mise-en-page">Mise en page & formatage</option>
+        <option value="archivage">Archivage</option>
+        <option value="autre">Autre (précisez en message)</option>
+      </select>
+      <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Description du projet</label>
+    <textarea id="message" name="message" rows="4" class="w-full border p-3 rounded focus:ring-2 focus:ring-primary/20" placeholder="Décrivez votre projet, le volume, les délais, etc." required></textarea>
+  </div>
+  <div>
+    <label for="file" class="block text-sm font-medium text-gray-700 mb-1">Documents à joindre (optionnel)</label>
+    <div class="border border-dashed border-gray-300 rounded p-4 text-center">
+      <i class="ri-upload-2-line text-gray-400 text-2xl mb-2"></i>
+      <p class="text-sm text-gray-500 mb-1">Glissez vos fichiers ici ou</p>
+      <button type="button" onclick="document.getElementById('file').click()" class="text-primary text-sm font-medium">parcourir vos fichiers</button>
+      <input type="file" id="file" name="file" class="hidden">
+    </div>
+  </div>
+  <div class="flex items-start">
+    <input type="checkbox" id="consent" name="consent" class="custom-checkbox mt-1" required>
+    <label for="consent" class="ml-2 text-sm text-gray-600">J'accepte que mes données soient traitées conformément à la politique de confidentialité de M-Tech Group.</label>
+  </div>
+  <button type="submit" class="bg-red-600 text-white px-6 py-3 rounded font-medium hover:bg-red-700 transition w-full md:w-auto">Envoyer</button>
+</form>
+  </div>
+</section>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/2250708091011" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors z-50">
+  <i class="ri-whatsapp-line ri-xl"></i>
+</a>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<h3 class="text-xl font-['Pacifico'] text-white mb-6">M-Tech Group</h3>
+<p class="text-gray-400 mb-6">Votre partenaire de confiance pour toutes vos solutions numériques en Côte d'Ivoire. Expertise locale, service personnalisé et résultats garantis.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Liens rapides</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Nos services</h4>
+<ul class="space-y-3">
+<li><a href="service-creation.html" class="text-gray-400 hover:text-white transition-colors">Création de sites web</a></li>
+<li><a href="design-graphique.html" class="text-gray-400 hover:text-white transition-colors">Design graphique</a></li>
+<li><a href="assistance-informatique.html" class="text-gray-400 hover:text-white transition-colors">Assistance informatique</a></li>
+<li><a href="traitement-documents.html" class="text-gray-400 hover:text-white transition-colors">Traitement de documents</a></li>
+<li><a href="formation.html" class="text-gray-400 hover:text-white transition-colors">Formation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-map-pin-line"></i>
+</span>
+<span class="text-gray-400">Cocody Angré, 7ème Tranche, Abidjan, Côte d'Ivoire</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-phone-line"></i>
+</span>
+<span class="text-gray-400">+225 07 08 09 10</span>
+</li>
+<li class="flex items-start">
+<span class="mr-3 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-mail-line"></i>
+</span>
+<span class="text-gray-400">contact@mtechgroup.ci</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 M-Tech Group. Tous droits réservés.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-500 text-sm">Moyens de paiement acceptés:</span>
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-bank-card-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu 
+const menuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
+mobileMenu.innerHTML = `
+<div class="flex justify-between items-center p-4 border-b">
+<span class="text-2xl font-['Pacifico'] text-primary">M-Tech Group</span>
+<button class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<nav class="p-4">
+<ul class="space-y-4">
+<li><a href="#" class="block py-2 text-gray-800 font-medium">Accueil</a></li>
+<li>
+<div class="py-2 text-gray-800 font-medium flex justify-between items-center">
+Services
+<i class="ri-arrow-down-s-line"></i>
+</div>
+<ul class="pl-4 mt-2 space-y-2 hidden">
+<li><a href="#" class="block py-2 text-gray-700">Création de sites web</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Design graphique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Assistance informatique</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Traitement de documents</a></li>
+<li><a href="#" class="block py-2 text-gray-700">Formation</a></li>
+</ul>
+</li>
+<li><a href="#about" class="block py-2 text-gray-800 font-medium">À propos</a></li>
+<li><a href="#contact" class="block py-2 text-gray-800 font-medium">Contact</a></li>
+</ul>
+</nav>
+<div class="p-4 mt-4">
+<a href="#contact" class="bg-primary text-white px-5 py-3 !rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition-colors w-full block text-center">Demander un devis</a>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-full');
+});
+mobileMenu.querySelector('button').addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+});
+// Services dropdown in mobile menu
+const serviceDropdown = mobileMenu.querySelector('.ri-arrow-down-s-line').parentNode;
+const serviceSubmenu = serviceDropdown.nextElementSibling;
+serviceDropdown.addEventListener('click', function() {
+serviceSubmenu.classList.toggle('hidden');
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+if (this.getAttribute('href') === '#') return;
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+mobileMenu.classList.add('translate-x-full');
+}
+});
+});
+});
+</script>
+
+<script>
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon i');
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.classList.remove('ri-subtract-line');
+        icon.classList.add('ri-add-line');
+      } else {
+        // Fermer les autres
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+        document.querySelectorAll('.accordion-icon i').forEach(i => {
+          i.classList.remove('ri-subtract-line');
+          i.classList.add('ri-add-line');
+        });
+
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.classList.remove('ri-add-line');
+        icon.classList.add('ri-subtract-line');
+      }
+    });
+  });
+</script>
+</body>
+</html>
